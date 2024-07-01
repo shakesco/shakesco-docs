@@ -35,7 +35,7 @@ const config = {
     accept: "application/json",
     Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
   },
-  data: JSON.stringify({
+  data: {
     auto_address: your_auto_address,
     network: Network,
     delegate_address: user_delegate_address,
@@ -46,7 +46,7 @@ const config = {
     should_split: Split,
     splitters: Splitters,
     splitters_amount: split_amounts,
-  }),
+  },
 };
 
 axios
@@ -88,11 +88,11 @@ const config = {
     accept: "application/json",
     Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
   },
-  data: JSON.stringify({
+  data: {
     delegate_address: user_delegate_address,
     auto_address: your_auto_address,
     network: Network,
-  }),
+  },
 };
 
 axios
@@ -134,11 +134,11 @@ const config = {
     accept: "application/json",
     Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
   },
-  data: JSON.stringify({
+  data: {
     delegate_address: user_delegate_address,
     auto_address: your_auto_address,
     network: Network,
-  }),
+  },
 };
 
 axios

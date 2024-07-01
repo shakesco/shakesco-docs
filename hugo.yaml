@@ -92,7 +92,7 @@ params:
 
   editURL:
     enable: true
-    base: "https://github.com/shakesco/Website"
+    base: "https://github.com/shakesco/shakesco-docs"
 
   search:
     enable: true
