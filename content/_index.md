@@ -36,7 +36,7 @@ layout: hextra-home
     subtitle="We're make Bitcoin and Ethereum cypherpunk again. Donate or receive stealth payments through the app or build with our SDK and start receiving private transactions🥷"
   >}}
   {{< hextra/feature-card
-    link="docs/passport"
+    link="https://shakesco.com/coming"
     icon="finger-print"
     title="Smart wallet"
     subtitle="Create smart wallets for your dAPP users in seconds. No seed phrase required. Powered by MPC security! 🤯"
