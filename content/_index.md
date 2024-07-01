@@ -48,13 +48,13 @@ layout: hextra-home
     subtitle="Building a smart wallet and want to estimate the amount of gas your user will pay? No problem we got you covered😉"
   >}}
   {{< hextra/feature-card
-    link=<https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603?platform=iphone>
+    link=https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603?platform=iphone
     icon="device-mobile"
     title="Download on IOS"
     subtitle="To perform recurring payments you need to deploy/open an auto account. It is labelled 'Business auto' when you open your business account. 📱"
   >}}
   {{< hextra/feature-card
-    link=<https://play.google.com/store/apps/details?id=com.shakesco.shakespay2>
+    link=https://play.google.com/store/apps/details?id=com.shakesco.shakespay2
     icon="device-mobile"
     title="Download on Android"
     subtitle="To perform recurring payments you need to deploy/open an auto account. It is labelled 'Business auto' when you open your business account. 📱"
