@@ -1,0 +1,106 @@
+# Hugo configuration file
+title: Shakespay
+baseURL: https://docs.shakesco.com
+languageCode: en-us
+theme: hextra
+
+# import hextra as module
+module:
+  imports:
+    - path: github.com/imfing/hextra
+
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+menu:
+  main:
+    - name: Docs
+      pageRef: /docs
+      weight: 1
+    - name: Dashboard ↗
+      url: "https://users.shakesco.com/"
+      weight: 3
+    - name: Contact
+      url: "https://shakesco.com/contact"
+      weight: 3
+    - name: Search
+      weight: 4
+      params:
+        type: search
+    - name: GitHub
+      weight: 5
+      url: "https://github.com/shakesco"
+      params:
+        icon: github
+    - name: Twitter
+      weight: 6
+      url: "https://twitter.com/shakespay"
+      params:
+        icon: x-twitter
+
+  sidebar:
+    - identifier: more
+      name: More
+      params:
+        type: separator
+      weight: 1
+    - identifier: ca
+      name: "Contract Addresses"
+      pageRef: "/content/contracts"
+      weight: 2
+    - identifier: sn
+      name: "Supported networks"
+      pageRef: "/content/networks"
+      weight: 2
+    - identifier: contracts
+      name: "Contracts"
+      url: "https://github.com/shakesco/shakesco-contracts/"
+      weight: 2
+
+params:
+  navbar:
+    displayTitle: true
+    displayLogo: true
+    logo:
+      path: https://res.cloudinary.com/dtz5vn3yl/image/upload/v1710622699/sxvg6waqt5d3flelfees.png
+
+  footer:
+    displayCopyright: false
+    displayPoweredBy: true
+
+  page:
+    # full (100%), wide (90rem), normal (1280px)
+    width: normal
+
+  theme:
+    # light | dark | system
+    default: system
+    displayToggle: true
+
+  editURL:
+    enable: true
+    base: "https://github.com/shakesco/Website"
+
+  search:
+    enable: true
+    type: flexsearch
+
+    flexsearch:
+      # index page by: content | summary | heading | title
+      index: content
+      # full | forward | reverse | strict
+      # https://github.com/nextapps-de/flexsearch/#tokenizer-prefix-search
+      tokenize: forward
