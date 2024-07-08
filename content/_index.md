@@ -12,7 +12,7 @@ layout: hextra-home
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle >}}
-  Receive recurring payments.&nbsp;<br class="sm:hx-block hx-hidden" />Receive stealth payments.&nbsp;<br class="sm:hx-block hx-hidden" /> Deploy smart wallets for your dAPP.
+  Receive recurring payments.&nbsp;<br class="sm:hx-block hx-hidden" />Receive stealth payments.&nbsp;<br class="sm:hx-block hx-hidden" /> Deploy smart wallets for your dAPP.&nbsp;<br class="sm:hx-block hx-hidden" /> Checkout is now LIVE! 💸
 {{< /hextra/hero-subtitle >}}
 </div>
 
@@ -20,7 +20,18 @@ layout: hextra-home
 {{< hextra/hero-button text="Get Started" link="docs" >}}
 </div>
 
-<div class="hx-mt-6"></div>
+{{< hextra/feature-grid >}}
+ {{< hextra/feature-card
+    title="Checkout in secondsss 🤑"
+    subtitle="Use our built in checkout system to easily accept recurring payments on Ethereum and Polygon !!!"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    image="images/checkout.png"
+    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+  >}}
+{{< /hextra/feature-grid >}}
+
+<div class="hx-mb-10"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card

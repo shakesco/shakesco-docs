@@ -6,7 +6,7 @@ next: docs/autopayments/api
 
 # Let's start with how autopayments works
 
-For autopayments to be possible their must be a pull and a push. When you give [**Stripe**](https://stripe.com/ "stripe") your [**Visa**](https://www.visa.com/ "visa") or [**MasterCard**](https://www.mastercard.com/global/en.html "mastercard") details you are actually giving them permission to pull from your account. The system will think that you are pushing payment but this has actually been executed by stripe. This system has been successful in traditional finance but with some drawbacks. One you are trusting the third party using stripe to facilitate auto payments. You are trusting that they have exceptional security and will not leak your card details to attackers. Two, the stripe system is centralized and not censorship-resistant, they perform the pull/push payments. If stripe falls, not that we are hoping for so, many companies such as [X](https://x.com "XXX") will have to look for alternative.
+For autopayments to be possible their must be a pull and a push. When you give [**Stripe**](https://stripe.com/ "stripe") your [**Visa**](https://www.visa.com/ "visa") or [**MasterCard**](https://www.mastercard.com/global/en.html "mastercard") details you are actually giving them permission to pull from your account. The system will think that you are pushing payment but this has actually been executed by stripe. This system has been successful in traditional finance but with some drawbacks. One you are trusting Stripe to facilitate auto payments. You are trusting that they have exceptional security and will not leak your card details to attackers. Two, the stripe system is centralized and not censorship-resistant, they perform the pull/push payments. If stripe falls, not that we are hoping for so, many companies such as [X](https://x.com "XXX") will have to look for alternative. They can also lock you out of the system. For example: sanctioned countries cannot use Stripe but can use Bitcoin or Ethereum.
 
 ## Problem
 
@@ -48,7 +48,7 @@ Thankfully we have done the work for you. Polygon:
 
 #### Split
 
-Split payments for recurring payments are here! This is only for C2B transactions. `requestUser` is now editted to allow split payments. When you are requesting users do they want to split payment with their friends? Set `wantstosplit` to true or false accordingly. If true populate `split` and `splitamount` with the number of users who will be participating in the split payment. Make sure they are the same length.
+Split payments for recurring payments are here! This is only for C2B transactions. `requestUser` from the [SDK](../../autopayments/sdk) and `/request` from the [API](../../autopayments/api) are now editted to allow split payments. When you are requesting users do they want to split payment with their friends? Set `wantstosplit` from the [SDK](../../autopayments/sdk) or `should_split` from the [API](../../autopayments/api), to true or false accordingly. If true populate `split` and `splitamount` with the number of users who will be participating in the split payment. Make sure they are the same length.
 
 ##### Things to note on split
 
@@ -57,9 +57,9 @@ This is important please note the following
 {{< /callout >}}
 
 - Make sure `split` and `splitamount` are the same length.
-- The `address` parameter in `requestUser` is the 'group leader' in the split payment. If all split members pay, the service will **ONLY** be given to `address`.
-- `splitamount` should be set by you to avoid bad user experience. If their are 3 split participants + the 'group leader' just say eg: 20 / 4, push 5 to `splitamount` array 3 times and then set the other 5 on the `amount` parameter.
-- Check that all participants have been requested. Use `isRequested` to loop through and check that all participants have been requested.
+- The `address` parameter in `requestUser` [SDK](../../autopayments/sdk) or the `delegate_address` in `/request` [API](../../autopayments/api), is the 'group leader' in the split payment. If all split members pay, the service will **ONLY** be given to `address`.
+- `splitamount` should be set by you to avoid bad user experience. If there are 3 split participants + the 'group leader' just say eg: 20 / 4, push 5 to `splitamount` array 3 times and then set another 5 on the `amount` parameter for the `address` parameter.
+- Check that all participants have been requested. Use `isRequested` in [SDK](../../autopayments/sdk) or `/request_sent` from [API](../../autopayments/api) to loop through the `split` participants and check that all participants have been requested.
 - Be careful with the number of participants you allow. A small number of participants is advised so that your business does not get less value. Split payment is for services that previously had one person paying while others didn't have to pay as the payer could just share the log in information with them. With split payment, each would have to pay but the total amount will be split among them. This will be more beneficial to your business than the traditional system!
 - Participants will need to work together to make sure their accounts are funded for split autopayments to work. If some take advantage of others then they can opt out and move to other groups or move to single autopayments.
 - There is no grace period for split participants.
@@ -82,11 +82,11 @@ User/business will have to accept change in price. They system doesn't allow aut
 
 #### Requests
 
-For you to start pulling payments, you need to make a pull request. So you use the request method, `requestUser` or `requestBusiness`, from our package or API call to request the user and await approval (Tell user/business to accept request from shakespay app). The reason we did this is because your wallet is guarded by [TSS(Threshold Signature Scheme)](../../multi-party-computation/threshold) meaning when creating a wallet, you went through a protocol that split shares between you and a remote server. This will make it cumbersome for your ui to integrate so we took this approach.
+For you to start pulling payments, you need to make a pull request. So you use the request method, `requestUser` or `requestBusiness` from the [SDK](../../autopayments/sdk) or the `/request` from [API](../../autopayments/api), request the user and await approval (Tell user/business to accept request from shakespay app). The reason we did this is because your wallet is guarded by [TSS(Threshold Signature Scheme)](../../multi-party-computation/threshold) meaning when creating a wallet, you went through a protocol that split shares between you and a remote server. This will make it cumbersome for your ui to integrate so we took this approach.
 
 #### Payment
 
-To check if payment was made, use the `hasPaid` method.
+To check if payment was made, use the `hasPaid` method from the [SDK](../../autopayments/sdk) or use `/has_paid` from the [API](../../autopayments/api).
 
 {{< callout type="warning" >}}
 Please check this method anywhere you are offering the service. This is the only way to check if you should release service or not.
@@ -97,7 +97,7 @@ Please check this method anywhere you are offering the service. This is the only
 Period should be given in seconds. If you want to do monthly, set period as `2592000`. (Assuming you want 30 day period), set period as `604800`. (Assuming you want 1 week period), set period as `31536000`. (Assuming you want 1 year period) or custom depending on your choice of period.
 
 {{< callout type="info" >}}
-Don't use `604,800`
+Don't use commas. Eg: `604,800`
 {{< /callout >}}
 
 {{< callout type="warning" >}}
@@ -109,7 +109,7 @@ Please enter period in seconds. Also don't enter a period less that 2 days/17280
 Amount should be given in units. So if you want 20 USD, enter `20`. Make sure to use `parseUnits` as directed in the docs.
 
 {{< callout type="warning" >}}
-Please enter amount in USD. Convert from local currency accordingly.
+Please enter amount in USD if using SDK. Convert from local currency accordingly. For API calls, check the list of [supported currencies](../../autopayments/api#currency-codes).
 {{< /callout >}}
 
 #### Fees

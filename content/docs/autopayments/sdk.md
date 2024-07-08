@@ -1,9 +1,13 @@
 ---
 title: SDK
 type: docs
-prev: docs/autopayments/api
+prev: docs/autopayments/checkout
 next: docs/private
 ---
+
+Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
+
+Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values.
 
 ## @shakesco/automation
 
@@ -85,7 +89,19 @@ When you want to request split payment:
   }
 ```
 
+{{< callout type="info" >}}
+Amount should be in USD. Eg: "10" is in USD. Boolean values are returned as **STRINGS**
+{{< /callout >}}
+
+{{< callout type="info" >}}
+You will be receiving USD 30. But it is split among 3 friends.
+{{< /callout >}}
+
 ### Request Tokens
+
+{{< callout type="info" >}}
+Get token addresses [**here**](../../autopayments/integration#requesting-token)
+{{< /callout >}}
 
 When you want to request a token:
 
@@ -109,6 +125,10 @@ When you want to request a token:
   console.log(requestUser);//Requested user successfully
   console.log(requestBusiness);//Requested business successfully
 ```
+
+{{< callout type="info" >}}
+Amount should be in USD. Eg: "20" is in USD.
+{{< /callout >}}
 
 ### Check payment status
 

@@ -18,28 +18,18 @@ This is a POST request
 To request a Customer or a Business, send a request to this url `https://autopay.shakesco.com/request`. Here is an Example:
 
 ```javascript {filename="index.js"}
-const user_delegate_address = ""; // Users Shakespay card/ Business card address
-const your_auto_address = ""; // Your Business auto account address. Can be found in Dashboard. Depending on Network.
-const Network = ""; // Depending on where your Business auto account address is deployed. Enter between Ethereum and Polygon
-const is_business = ""; // Are you requesting business
-const Period = ""; // Period to request payment
-const Amount = ""; // Amount to request
-const Token = ""; // If you want token.
-const Split = ""; // If you want to allow split payment.
-const Splitters = []; // split payers.
-const split_amounts = []; // Split amount
 const config = {
   method: "POST",
   url: "https://autopay.shakesco.com/request",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
   },
   data: {
     auto_address: your_auto_address,
     network: Network,
     delegate_address: user_delegate_address,
-    is_business: is_business,
+    currency_code: code,
     period: Period,
     amount: Amount,
     token_address: Token,
@@ -61,12 +51,112 @@ axios
 
 #### Info
 
+```shell {filename="info.txt"}
+user_delegate_address: "Users Shakespay card/ Business card address."
+your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
+Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
+Period: "Period to request payment. Make sure it is in seconds"
+Amount: "Amount to request. Parse amount depending on the currency code."
+code: "Currency code that you want to request payment with"
+Token: "If you want token. Enter the token address. If you want to request Ethereum or Polygon, enter an empty string."
+Split: "If you want to allow split payment. Enter true or false."
+Splitters: "Address of splitters. Enter an empty array if you don't want split autopayment."
+split_amounts: "Amount each splitter will pay. Parse depending on currency code"
+```
+
 #### Response
 
 ```shell {filename="cmd"}
+{
 id: 1,
 delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
-result: "Requested 0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36 successfully",
+result: "Requested User successfully"
+}
+```
+
+#### Response (If Business)
+
+```shell {filename="cmd"}
+{
+id: 1,
+delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+result: "Requested Business successfully",
+}
+```
+
+#### Response (If Already Requested)
+
+```shell {filename="cmd"}
+{
+id: 1,
+delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+result: "User has already been requested",
+}
+```
+
+#### Response (If Already Requested Business)
+
+```shell {filename="cmd"}
+{
+id: 1,
+delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+result: "Business has already been requested",
+}
+```
+
+### Currency codes
+
+{{< callout type="info" >}}
+This is a GET request
+{{< /callout >}}
+
+To check all the currency codes we support, send a request to this url `https://autopay.shakesco.com/codes`. Here is an Example:
+
+```javascript {filename="index.js"}
+const config = {
+  method: "GET",
+  url: "https://autopay.shakesco.com/codes",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+#### Response
+
+```shell {filename="cmd"}
+{
+    id: 1,
+    currency_codes: [
+        "MATIC",
+        "FJD",
+        "MXN",
+        "ETH",
+        "LVL",
+        "USDT",
+        "CDF",
+        "BBD",
+        "EUR",
+        "UGX",
+        "GLM",
+        "BTC",
+        "RAY",
+        "KES",
+        "INR",
+        "USD"
+        .........
+        ]
+}
 ```
 
 ### Has Paid
@@ -78,15 +168,12 @@ This is a GET request
 To check if payment has been made, send a request to this url `https://autopay.shakesco.com/has_paid`. Here is an Example:
 
 ```javascript {filename="index.js"}
-const user_delegate_address = ""; // Users Shakespay card/ Business card address
-const your_auto_address = ""; // Your Business auto account address. Can be found in Dashboard. Depending on Network.
-const Network = ""; // Depending on where your Business auto account address is deployed. Enter between Ethereum and Polygon
 const config = {
   method: "GET",
   url: "https://autopay.shakesco.com/has_paid",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
   },
   data: {
     delegate_address: user_delegate_address,
@@ -103,6 +190,14 @@ axios
   .catch((error) => {
     console.log(error);
   });
+```
+
+#### Info
+
+```shell {filename="info.txt"}
+user_delegate_address: "Users Shakespay card/ Business card address."
+your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
+Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
 ```
 
 #### Response
@@ -124,15 +219,12 @@ This is a GET request
 To check if request has been made, send a request to this url `https://autopay.shakesco.com/request_sent`. Here is an Example:
 
 ```javascript {filename="index.js"}
-const user_delegate_address = ""; // Users Shakespay card/ Business card address
-const your_auto_address = ""; // Your Business auto account address. Can be found in Dashboard. Depending on Network.
-const Network = ""; // Depending on where your Business auto account address is deployed. Enter between Ethereum and Polygon
 const config = {
   method: "GET",
   url: "https://autopay.shakesco.com/request_sent",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${process.env.SHAKESCOQUERYAPIKEY}`,
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
   },
   data: {
     delegate_address: user_delegate_address,
@@ -151,6 +243,14 @@ axios
   });
 ```
 
+#### Info
+
+```shell {filename="info.txt"}
+user_delegate_address: "Users Shakespay card/ Business card address."
+your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
+Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
+```
+
 #### Response
 
 ```shell {filename="cmd"}
@@ -162,6 +262,16 @@ axios
 ```
 
 ### Errors
+
+#### 400
+
+```shell {filename="cmd"}
+{
+    error: "Bad Request";
+}
+```
+
+Check the currency code that you are parsing. Make sure it in Upper case. Ie: BTC, ETH etc
 
 #### 401
 

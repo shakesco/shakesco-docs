@@ -1,7 +1,7 @@
 ---
 title: Stealth payments
 type: docs
-prev: docs/autopayments
+prev: docs/autopayments/sdk
 next: docs/userop/
 sidebar:
   open: true
