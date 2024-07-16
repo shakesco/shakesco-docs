@@ -1,13 +1,14 @@
 ---
 title: API
 type: docs
-prev: docs/autopayments/integration
+prev: docs/autopayments/start
 next: docs/autopayments/sdk
 ---
 
 Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
 
 Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values.
+Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
 
 ### Request
 
@@ -282,6 +283,16 @@ Check the currency code that you are parsing. Make sure it in Upper case. Ie: BT
 ```
 
 Check if you have parsed API_KEY. Also parse API_KEY like so `Bearer API_KEY` in Authorization.
+
+#### 402
+
+```shell {filename="cmd"}
+{
+    error: "Payment Required";
+}
+```
+
+Make payment because you have reached your request limit.
 
 #### 403
 

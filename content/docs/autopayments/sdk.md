@@ -7,7 +7,7 @@ next: docs/private
 
 Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
 
-Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values.
+Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values. Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
 
 ## @shakesco/automation
 
