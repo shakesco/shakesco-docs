@@ -16,3 +16,7 @@ This is a hurdle in Ethereum, mostly Bitcoin because they only allows push payme
 If we decide to use Ethereum contracts, who will be making the calls every time a payment is requested? If we make this custodial, we can control who gets to use the system and who doesn't.
 
 So how do you solve the push-and-pull problem? Or the decentralizion problem? The goal is to create a self-custody, censorship-resistant, permissionless, decentralized, and secure auto-payment system fully built on the Ethereum ecosystem. If you said Account Abstraction, you are right! In the next steps, we will explain how it works and how to integrate and start receiving value today.
+
+{{< cards >}}
+{{< card link="https://usa.visa.com/solutions/crypto/auto-payments-for-self-custodial-wallets.html" title="Visa proposal" icon="credit-card" subtitle="Visa proposes auto-payments for self-custody wallet." >}}
+{{< /cards >}}
