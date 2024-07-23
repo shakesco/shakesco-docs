@@ -3,7 +3,7 @@ title: Supported Networks
 ---
 
 {{< callout type="warning" >}}
- Don't interact with any contract from __SHAKEPAY__ if its not from the following networks
+ Don't interact with any contract from __SHAKESPAY__ if its not from the following networks
 {{< /callout >}}
 
 | Network        | Mainnet           | Testnet  |
