@@ -10,7 +10,163 @@ Before getting started please get your API keys from the [dashboard](https://use
 Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values.
 Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
 
-### Request
+### Test
+
+Before getting started, send a test request to make sure everything is okay.
+
+#### Request test address (User)
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+First request a delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+
+Send a request to this url `https://autopay.shakesco.com/delegate_address`. Here is an Example:
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/delegate_address",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    smart_wallet: your_smart_wallet_address,
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+##### Response
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  test_delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+}
+```
+
+#### Request test address (Business)
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+If you want to test a request to a business, request a business delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+
+Send a request to this url `https://autopay.shakesco.com/buss_delegate_address`. Here is an Example:
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/buss_delegate_address",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    smart_wallet: your_smart_wallet_address,
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+##### Response
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  test_delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+}
+```
+
+#### Test Request
+
+You can now send a test request:
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+Select the period you want and enter the delegate address requested above. Enter the details as advised below.
+
+Send a request to this url `https://autopay.shakesco.com/request`. Here is an Example:
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/request",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    "auto_address": "0x309E7d835ccE6E74BC72A2E523fa7f79FFC0d413",
+    "network": "11155111",
+    "delegate_address": YOUR_TEST_DELEGATE_ADDRESS,
+    "currency_code": "",
+    "period": PERIOD,
+    "amount": "0",
+    "token_address": "",
+    "should_split": "false",
+    "splitters": [],
+    "splitters_amount": []
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+##### Response
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  test_delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "Requested User successfully"
+}
+```
+
+##### Response (If Business)
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  test_delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "Requested Business successfully",
+}
+```
+
+{{< callout type="info" >}}
+Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
+{{< /callout >}}
+
+### Live Request
 
 {{< callout type="info" >}}
 This is a POST request
@@ -69,9 +225,9 @@ split_amounts: "Amount each splitter will pay. Parse depending on currency code"
 
 ```shell {filename="cmd"}
 {
-id: 1,
-delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
-result: "Requested User successfully"
+  id: 1,
+  delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "Requested User successfully"
 }
 ```
 
@@ -79,9 +235,9 @@ result: "Requested User successfully"
 
 ```shell {filename="cmd"}
 {
-id: 1,
-delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
-result: "Requested Business successfully",
+  id: 1,
+  delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "Requested Business successfully",
 }
 ```
 
@@ -89,9 +245,9 @@ result: "Requested Business successfully",
 
 ```shell {filename="cmd"}
 {
-id: 1,
-delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
-result: "User has already been requested",
+  id: 1,
+  delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "User has already been requested",
 }
 ```
 
@@ -99,9 +255,9 @@ result: "User has already been requested",
 
 ```shell {filename="cmd"}
 {
-id: 1,
-delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
-result: "Business has already been requested",
+  id: 1,
+  delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
+  result: "Business has already been requested",
 }
 ```
 

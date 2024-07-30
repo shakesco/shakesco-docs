@@ -27,25 +27,83 @@ After installing:
 const { Automation, parseUnits } = require("@shakesco/automation");
 ```
 
+### Test
+
+Before getting started, send a test request to make sure everthing is okay.
+
+#### Request test address
+
+First request a delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+
+```javascript {filename="index.js"}
+  const your_smart_wallet_address = "";
+
+  const shakescocontract = new Automation(
+    your_smart_wallet_address, 
+    process.env.SHAKESCOAPIKEY,
+    "11155111"
+  );
+
+  const requestAddress = await shakescocontract.testDelegateAddressBuss(); //request test address
+
+  console.log(requestAddress);
+  // {
+  //   id: "1",
+  //   test_delegate_address: "0x472ef8282b420396ad307cb89f542e60b1dec1a1",
+  // }
+```
+
+#### Test Request
+
+Then send a request:
+
+```javascript {filename="index.js"}
+  const address = ""; // Your test delegate address you requested above
+
+  const shakescocontract = new Automation(
+  address,
+  process.env.SHAKESCOAPIKEY, 
+  "11155111");
+
+  const period = "86400" //1 day
+
+  const requestUser = await shakescocontract.requestUser(
+    "0x309E7d835ccE6E74BC72A2E523fa7f79FFC0d413", // parse this address 
+    "", 
+    period, 
+    "", 
+    false, 
+    [], 
+    []);//request user
+
+  console.log(requestUser);//Requested user successfully
+```
+
 {{< callout type="info" >}}
-Visit [**Shakesco**](https://shakesco.com/pricing "Shakesco") to get fee rates and then get your api keys [here](https://users.shakesco.com).  
-If you want to see the fee charged for every transaction, go [**here**](../../autopayments/integration#fees "here")
+Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
 {{< /callout >}}
 
-### Request user
+### Live
+
+{{< callout type="info" >}}
+Visit [__Shakesco__](https://shakesco.com/pricing "Shakesco") to get fee rates and then get your api keys [here](https://users.shakesco.com).  
+If you want to see the fee charged for every transaction, go [__here__](../../autopayments/integration#fees "here")
+{{< /callout >}}
+
+#### Request user
 
 Send request to user. Ask user for Shakespay card/ Business card address.
 
 ```javascript {filename=index.js}
   const address = /* Initialize your automation address. Can be found in your dashboard https://users.shakesco.com */
 
-  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "Ethereum");
+  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "1");
 
   const period = "604800" //1 week
 
   const amount = parseUnits("20", 18); //amount to request regularly
 
-  const delegateAddress = /*Ask user/business for their Shakespay card/delegate/business card ONLY.*/
+  const delegateAddress = /*Ask user/business for their Shakespay card/delegate/business card ONLY.*/;
 
   const requestUser = await shakescocontract.requestUser(delegateAddress, "", period, amount, false, [], []);//request user
 
@@ -56,17 +114,17 @@ Send request to user. Ask user for Shakespay card/ Business card address.
 ```
 
 {{< callout type="info" >}}
-Period should be in seconds. Amount should be in USD. Eg: "20" is in USD. Boolean values are returned as **STRINGS**
+Period should be in seconds. Amount should be in USD. Eg: "20" is in USD. Boolean values are returned as __STRINGS__
 {{< /callout >}}
 
-### Request Split payment
+#### Request Split payment
 
 When you want to request split payment:
 
 ```javascript {filename=index.js}
   const address = /* Initialize your automation/Shakespay auto/business auto address. Can be found in your dashboard https://users.shakesco.com */
 
-  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY);
+  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "1");
 
   const period = "604800" //1 week
 
@@ -90,17 +148,17 @@ When you want to request split payment:
 ```
 
 {{< callout type="info" >}}
-Amount should be in USD. Eg: "10" is in USD. Boolean values are returned as **STRINGS**
+Amount should be in USD. Eg: "10" is in USD. Boolean values are returned as __STRINGS__
 {{< /callout >}}
 
 {{< callout type="info" >}}
 You will be receiving USD 30. But it is split among 3 friends.
 {{< /callout >}}
 
-### Request Tokens
+#### Request Tokens
 
 {{< callout type="info" >}}
-Get token addresses [**here**](../../autopayments/integration#requesting-token)
+Get token addresses [__here__](../../autopayments/integration#requesting-token)
 {{< /callout >}}
 
 When you want to request a token:
@@ -108,7 +166,7 @@ When you want to request a token:
 ```javascript {filename=index.js}
   const address = /* Initialize your automation address. Can be found in your dashboard https://users.shakesco.com */
 
-  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "Ethereum");
+  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "137");
 
   const period = "604800" //1 week
 
@@ -130,7 +188,7 @@ When you want to request a token:
 Amount should be in USD. Eg: "20" is in USD.
 {{< /callout >}}
 
-### Check payment status
+#### Check payment status
 
 To check if user has made payment or not:
 
@@ -139,7 +197,7 @@ To check if user has made payment or not:
 
   let delegateAddress = /*Request user for their info: Shakespay card/delegate/business card address ONLY*/
 
-  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY);
+  const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "137");
 
   const requestUser = await shakescocontract.hasPaid(delegateAddress);
   console.log(requestUser); //"true"

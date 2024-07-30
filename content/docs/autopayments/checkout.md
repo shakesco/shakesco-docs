@@ -19,6 +19,83 @@ style="display: flex;">
    src="/images/checkout.png" alt="User side features">
 </div>
 
+## Test
+
+Before getting started, send a test request to make sure everything is okay. Go to the [API section](../../../docs/autopayments/api/#request-test-address-user) and receive a test delegate address.
+
+You can now send a start session request.
+
+### Test Start session
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+To get the URL, send a request to this url `https://autopay.shakesco.com/start_session`. Here is an Example:
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/start_session",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    "auto_address": "0x309E7d835ccE6E74BC72A2E523fa7f79FFC0d413",
+    "description": "Test description",
+    "network": "11155111",
+    "period": PERIOD,
+    "currency_code": CURRENCY_CODE,
+    "amount": 0,
+    "token_address": [],
+    "should_split": false,
+    "redirect_url": REDIRECT_URL,
+    "number": ""
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+#### Info
+
+{{< callout type="info" >}}
+Understand the information needed and parse as advised.
+{{< /callout >}}
+
+##### CURRENCY_CODE
+
+Currency code that you want to request payment with. Check currency code  s [here](../../autopayments/api#currency-codes)
+
+##### REDIRECT_URL
+
+Enter URL that the checkout should redirect to if the request is successful.
+
+##### PERIOD
+
+Period to request payment. Make sure it is in seconds.
+
+#### Response
+
+```shell {filename="cmd"}
+{
+    "id": 1,
+    "url": "https://checkout.shakesco.com?ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhkWFJ2WDJGa1pISmxjM01pT2lJd2VESTBOalkxTURFek1ERmlPRFpsWlRjNVpFUTFSak0wTjJReU5qWTVNakV3T0RJMk1EZ3dNallpTENKdVpYUjNiM0pySWpvaU1UTTNJaXdpY0dWeWFXOWtJam9pTmpBME9EQXdJaXdpWTNWeWNtVnVZM2xmWTI5a1pTSTZJbFZUUkNJc0luSmxaR2x5WldOMFgzVnliQ0k2SW1oMGRIQnpPaTh2YzJoaGEyVnpZMjh1WTI5dElpVkVNaUxDSlhSVlJJSWwwc0luTm9iM1ZzWkY5emNHeHBkQ0k2Wm1Gc2MyVXNJa0ZRU1Y5TFJWa2lPaUpsZFdSTmJuQjVhVVpMTUV3NVdIQlFNMFUyZEd0alRHVktSa015YzNJNFJuUTBaVFZrYTFwV01UQTRNbUkzTVdVaUxDSnBZWFFpT2pFM01qQXpOemd4TURNc0ltVjRjQ0k2TVRjeU1ETTNPRFF3TTMwLkpWbGUzd0QxNld0NTkwWW1WSUpsUE5rWEZlb3FyTDZrRHc0RnZmMVEyYlk="
+}
+```
+
+{{< callout type="info" >}}
+Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
+{{< /callout >}}
+
 ## Get started
 
 To get started, first you need to send an API call to create a session for a specific user. This will return a URL that you can embed or redirect users to for them to complete the request. So when a user is ready to send a request, send the following API call:

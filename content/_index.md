@@ -12,7 +12,7 @@ layout: hextra-home
 
 <div class="hx-mb-12">
 {{< hextra/hero-subtitle >}}
-  Receive recurring payments.&nbsp;<br class="sm:hx-block hx-hidden" />Receive stealth payments.&nbsp;<br class="sm:hx-block hx-hidden" /> Deploy smart wallets for your dAPP.&nbsp;<br class="sm:hx-block hx-hidden" /> Checkout is now LIVE! 💸
+  Receive recurring payments.&nbsp;<br class="sm:hx-block hx-hidden" />Receive stealth payments.&nbsp;<br class="sm:hx-block hx-hidden" /> Deploy smart wallets for your dAPP.&nbsp;<br class="sm:hx-block hx-hidden" /> Checkout is now LIVE! 💸&nbsp;<br class="sm:hx-block hx-hidden" /> Test out auto-payments for free before going live 🥳
 {{< /hextra/hero-subtitle >}}
 </div>
 

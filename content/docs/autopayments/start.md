@@ -8,7 +8,7 @@ next: docs/autopayments/api
 
 For auto-payments to work you need to fund your auto-account with chainlink. We have made this simple so that you don't have to worry about swapping from any other asset.
 
-## Prerequisite
+## Pre-requisite
 
 First, open your auto-account. We suggest Polygon. Ethereum is too expensive!
 
