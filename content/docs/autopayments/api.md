@@ -20,7 +20,7 @@ Before getting started, send a test request to make sure everything is okay.
 This is a POST request
 {{< /callout >}}
 
-First request a delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+First request a delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
 
 Send a request to this url `https://autopay.shakesco.com/delegate_address`. Here is an Example:
 
@@ -62,7 +62,7 @@ axios
 This is a POST request
 {{< /callout >}}
 
-If you want to test a request to a business, request a business delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+If you want to test a request to a business, request a business delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
 
 Send a request to this url `https://autopay.shakesco.com/buss_delegate_address`. Here is an Example:
 

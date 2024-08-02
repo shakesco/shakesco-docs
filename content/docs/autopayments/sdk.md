@@ -33,7 +33,7 @@ Before getting started, send a test request to make sure everthing is okay.
 
 #### Request test address
 
-First request a delegate address. Enter your smart wallet address, either one between Ethereum and Polygon, plus api key:
+First request a delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
 
 ```javascript {filename="index.js"}
   const your_smart_wallet_address = "";
