@@ -25,6 +25,14 @@ Shakespay works as explained above but we made some changes due to our Security 
 
 The autopayment system is a bit different from the traditional system. In the traditional system if Bob gives Alice his card, alice will use Bob's card to perform autopayment in your business and Bob can do the same. In this system, if Bob gives Alice their address, service will only be given to Bob.
 
+#### One-time Payment
+
+{{< callout type="info" >}}
+Enter period as **0** and start period as **0**
+{{< /callout >}}
+
+One time payment is here! When you want to pull payment only once just enter period as **0** ans start period as **0**. The user will still need to accept this request, but you will only pull payment once.
+
 #### Requesting token
 
 We have added support for you to request tokens from users. For now your Polygon auto-payment account supports WBTC, WETH, USDT and USDC. On Ethereum: WBTC, USDT and USDC.
