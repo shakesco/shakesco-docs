@@ -43,6 +43,7 @@ const config = {
   },
   data: {
     "auto_address": "0x309E7d835ccE6E74BC72A2E523fa7f79FFC0d413",
+    "delegate_address": TEST_DELEGATE_ADDRESS,
     "description": "Test description",
     "network": "11155111",
     "period": PERIOD,
@@ -70,6 +71,10 @@ axios
 {{< callout type="info" >}}
 Understand the information needed and parse as advised.
 {{< /callout >}}
+
+##### TEST_DELEGATE_ADDRESS
+
+Enter the test delegate address you requested above.
 
 ##### CURRENCY_CODE
 
@@ -118,6 +123,7 @@ const config = {
   },
   data: {
     auto_address: your_auto_address,
+    delegate_address: "", // leave empty
     network: Network,
     period: Period,
     description: user_delegate_address,
