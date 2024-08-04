@@ -71,7 +71,8 @@ This is important please note the following
 - Be careful with the number of participants you allow. A small number of participants is advised so that your business does not get less value. Split payment is for services that previously had one person paying while others didn't have to pay as the payer could just share the log in information with them. With split payment, each would have to pay but the total amount will be split among them. This will be more beneficial to your business than the traditional system!
 - Participants will need to work together to make sure their accounts are funded for split autopayments to work. If some take advantage of others then they can opt out and move to other groups or move to single autopayments.
 - There is no grace period for split participants.
-- If a user is switching from split pull to personal pull, they will have to pay again, **the full amount** to start their own timeline.
+- If a user is switching from split pull to personal pull, they will have to pay again, **the full amount** to start their own timeline. If they won't pay again at that time, service will not be provided.
+- If a user is switching group members, please tell them to accept again. This is important so they can be marked as paid. If not the next time your autopayment system will run the pull payment they will be marked as paid.
 
 #### Changing amount
 
