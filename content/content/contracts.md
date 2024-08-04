@@ -13,12 +13,12 @@ title: Contract Addresses
 | FromShakespay  | 0x403302B37D2C29CA37f0b0BbCf1591F2dc2E7d22 | Saving Raffle  |
 | ShakescoAccountFactory    | 0x12ea9e146902cBc0cbd6A205Dd99f88b3dbD321a | Personal Smart wallet factory |
 | ShakescoSavingsFactory    | 0x00cebBCb1D599F7cDd4e429840E6d36f7b10f471 | Personal Saving wallet factory |
-| ShakescoDelegateAccountFactory  | 0x6B2346AA0750F48B442EB3400F54793D7e381cEd | Personal Card wallet factory |
+| ShakescoDelegateAccountFactory  | 0x8B3C2843f118377f9cE5802D2d60991b516C6C36 | Personal Card wallet factory |
 | ShakescoAutoPaymentFactory| 0xbDd2647578712159Cb60cf57618d7B0ff99832f8 | Personal Autopayment wallet factory |
 | ShakescoBusinessFactory    | 0x59D6951f45C89fC0f75294AE0D1823fF650621E1 | Business Smart wallet factory |
 | ShakescoBusinessSavingsFactory | 0x1beBa8543d6F9Fae233c0880f340A99e54c85E14 | Business Saving wallet factory |
-| ShakescoDelegateBusinessFactory  | 0xFa542278Bf05fa1882cA7cd15Db0b1930D31fED4 | Business Card wallet factory |
-|ShakescoAutoPaymentBusinessFactory|0x99350E4F5e934c7b66DE2D0B0F14Ce3e161f2D00|BusinessAutopaymentwalletfactory|
+| ShakescoDelegateBusinessFactory  | 0x1B5C1040d0b6053b56Ea2c2f22EFddF521FAF792 | Business Card wallet factory |
+|ShakescoAutoPaymentBusinessFactory|0x00e3Be1224D2A7DE83319dDe40423BC75cd57682|BusinessAutopaymentwalletfactory|
 | ShakescoGroupFactory | 0x71F60c2bc1496ba21c2d3955C77E7796e439B778 | Personal Group Wallet factory |
 | ShakescoPrivate | 0x30045daEb3eCea157408C21c318A29d2D9Cf0410 | Private Transaction contract |
 | ShakescoRegisterAutomation | 0xF4EA3CFE1470C0739600F4d57dA058d70C9e09c1 | Chainlink automation registry |
