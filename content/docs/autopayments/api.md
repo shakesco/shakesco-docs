@@ -277,6 +277,11 @@ const config = {
     accept: "application/json",
     Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
   },
+  data: {
+    auto_address: auto_address // when live
+    // delegate_address: test_delegate_address, // when testing
+    network: network // The network
+  }
 };
 
 axios
@@ -288,6 +293,24 @@ axios
     console.log(error);
   });
 ```
+
+#### Info
+
+{{< callout type="info" >}}
+Understand the information needed and parse as advised.
+{{< /callout >}}
+
+##### auto_address
+
+Enter your auto address.
+
+##### test_delegate_address
+
+Enter your test delegate address. __ONLY WHEN TESTING__
+
+##### network
+
+Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon or 11155111 for testing
 
 #### Response
 

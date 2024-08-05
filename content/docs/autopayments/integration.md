@@ -33,6 +33,8 @@ Enter period as **0** and start period as **0**
 
 One time payment is here! When you want to pull payment only once just enter period as **0** ans start period as **0**. The user will still need to accept this request, but you will only pull payment once.
 
+The user will always return has_paid as true, until you request again. If you request again, you will reset everything and they will need to make another one time payment to be marked as paid.
+
 #### Requesting token
 
 We have added support for you to request tokens from users. For now your Polygon auto-payment account supports WBTC, WETH, USDT and USDC. On Ethereum: WBTC, USDT and USDC.
@@ -66,13 +68,14 @@ This is important please note the following
 
 - Make sure `split` and `splitamount` are the same length.
 - The `address` parameter in `requestUser` [SDK](../../autopayments/sdk) or the `delegate_address` in `/request` [API](../../autopayments/api), is the 'group leader' in the split payment. If all split members pay, the service will **ONLY** be given to `address`.
-- `splitamount` should be set by you to avoid bad user experience. If there are 3 split participants + the 'group leader' just say eg: 20 / 4, push 5 to `splitamount` array 3 times and then set another 5 on the `amount` parameter for the `address` parameter.
+- **Unless you want them to select how much each should pay,** `splitamount` should be set by you to avoid bad user experience. If there are 3 split participants + the 'group leader' just say eg: 20 / 4, push 5 to `splitamount` array 3 times and then set another 5 on the `amount` parameter for the `address` parameter.
 - Check that all participants have been requested. Use `isRequested` in [SDK](../../autopayments/sdk) or `/request_sent` from [API](../../autopayments/api) to loop through the `split` participants and check that all participants have been requested.
 - Be careful with the number of participants you allow. A small number of participants is advised so that your business does not get less value. Split payment is for services that previously had one person paying while others didn't have to pay as the payer could just share the log in information with them. With split payment, each would have to pay but the total amount will be split among them. This will be more beneficial to your business than the traditional system!
 - Participants will need to work together to make sure their accounts are funded for split autopayments to work. If some take advantage of others then they can opt out and move to other groups or move to single autopayments.
 - There is no grace period for split participants.
 - If a user is switching from split pull to personal pull, they will have to pay again, **the full amount** to start their own timeline. If they won't pay again at that time, service will not be provided.
 - If a user is switching group members, please tell them to accept again. This is important so they can be marked as paid. If not the next time your autopayment system will run the pull payment they will be marked as paid.
+- [One time payment](../../autopayments/integration#one-time-payment) are available for split payments
 
 #### Changing amount
 
