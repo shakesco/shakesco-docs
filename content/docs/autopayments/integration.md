@@ -127,6 +127,14 @@ Please enter amount in USD if using SDK. Convert from local currency accordingly
 Please note fees. For every pull from a user a **3%** fee is charged on the price and for every business pull a **5%** fee is charged on the price. For every pull of tokens like USDT, USDC etc a **4%** fee is charged on the price.
 {{< /callout >}}
 
+#### Invoices
+
+{{< callout type="info" >}}
+Invoices are provided to your customers once they make payment. If you are on free-tier, you can only send 10,000 invoices, other invoices will be charged 0.5% of the amount paid. If you are on any paid tier, there is no cap on the number of invoices sent.
+{{< /callout >}}
+
+Invoices help your customers prove that they made payment for a certain services. They are now available on Shakespay. Once payment is made invoice is sent to your customer.
+
 #### Discount period
 
 When deploying your `Business Auto` account, you had to enter a discount period. A discount period is a period when users can enjoy your service to test it out, free trial. They will be required to pay after the end of the free trial. Users CANNOT manipulate this with their account. It is only offered once. We are looking at how we can make it even more efficient that you don't have to worry about users creating numerous accounts to get free tier all the time.
