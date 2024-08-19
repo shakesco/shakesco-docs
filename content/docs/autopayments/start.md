@@ -14,16 +14,16 @@ First, open your auto-account. We suggest Polygon. Ethereum is too expensive!
 
 ### Getting started
 
-You will notice your auto-account already has some LINK. This is because when you open an account, your smart wallet performs a batch transaction to allow your auto-account to go live!
+You will notice your auto-payment wallet already has some LINK. This is because when you open an account(deploy your contract), your smart wallet performs a batch transaction to allow your auto-payment wallet to go live!
 
 <img
 src="/images/1728.png"  
 alt="Dashboard"
 height="200">
 
-From your Dashboard you can see your Chainlink balance and minimum balance. If your balance is approaching minimum or is below minimum , your auto-account will __NOT__ perform payments. So it is important to keep it above minimum.
+From your Dashboard, you can view your Chainlink balance and the minimum required balance. If your balance is approaching or falls below the minimum, your auto-payment wallet will __NOT__ perform payments. Therefore, it is important to maintain a balance above the minimum.
 
-To fund, go to your app. Swipe to your Business auto account on the wallet page. Click and go to the account you want to view. You should see a page like the one below:
+To add funds, open the app and navigate to your Business Auto account on the wallet page. Select the account you want to view. You should see a page similar to the one below:
 
 <img
 src="/images/1830.png"  

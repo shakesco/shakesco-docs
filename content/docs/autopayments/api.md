@@ -5,12 +5,17 @@ prev: docs/autopayments/start
 next: docs/autopayments/sdk
 ---
 
-Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
 
-Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values.
-Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
+Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
+
+If you want to test out the system, just go [here.](#test)
 
 ### Test
+
+{{< callout type="info" >}}
+We fund your test delegate address automatically, so you don't need to enter an amount in testing mode.
+{{< /callout >}}
 
 Before getting started, send a test request to make sure everything is okay.
 
@@ -20,7 +25,7 @@ Before getting started, send a test request to make sure everything is okay.
 This is a POST request
 {{< /callout >}}
 
-First request a delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
+First, request a delegate address by entering your business smart wallet address (it's the same for both Ethereum and Polygon) along with your API key:
 
 Send a request to this url `https://autopay.shakesco.com/delegate_address`. Here is an Example:
 
@@ -62,7 +67,7 @@ axios
 This is a POST request
 {{< /callout >}}
 
-If you want to test a request to a business, request a business delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
+If you want to test a request to a business, request a business delegate address by entering your business smart wallet address (it's the same for both Ethereum and Polygon) along with your API key:
 
 Send a request to this url `https://autopay.shakesco.com/buss_delegate_address`. Here is an Example:
 
@@ -163,7 +168,7 @@ axios
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
+Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
 {{< /callout >}}
 
 ### Live Request
@@ -277,11 +282,6 @@ const config = {
     accept: "application/json",
     Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
   },
-  data: {
-    auto_address: auto_address // when live
-    // delegate_address: test_delegate_address, // when testing
-    network: network // The network
-  }
 };
 
 axios
@@ -293,24 +293,6 @@ axios
     console.log(error);
   });
 ```
-
-#### Info
-
-{{< callout type="info" >}}
-Understand the information needed and parse as advised.
-{{< /callout >}}
-
-##### auto_address
-
-Enter your auto address.
-
-##### test_delegate_address
-
-Enter your test delegate address. __ONLY WHEN TESTING__
-
-##### network
-
-Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon or 11155111 for testing
 
 #### Response
 
@@ -342,14 +324,18 @@ Depending on where your Business auto account address is deployed. Enter 1 for E
 ### Has Paid
 
 {{< callout type="info" >}}
-This is a GET request
+This is a POST request
+{{< /callout >}}
+
+{{< callout type="warning" >}}
+Check this request wherever you're offering your service.
 {{< /callout >}}
 
 To check if payment has been made, send a request to this url `https://autopay.shakesco.com/has_paid`. Here is an Example:
 
 ```javascript {filename="index.js"}
 const config = {
-  method: "GET",
+  method: "POST",
   url: "https://autopay.shakesco.com/has_paid",
   headers: {
     accept: "application/json",
@@ -393,14 +379,14 @@ Network: "Depending on where your Business auto account address is deployed. Ent
 ### Has Requested
 
 {{< callout type="info" >}}
-This is a GET request
+This is a POST request
 {{< /callout >}}
 
 To check if request has been made, send a request to this url `https://autopay.shakesco.com/request_sent`. Here is an Example:
 
 ```javascript {filename="index.js"}
 const config = {
-  method: "GET",
+  method: "POST",
   url: "https://autopay.shakesco.com/request_sent",
   headers: {
     accept: "application/json",

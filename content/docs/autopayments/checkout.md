@@ -5,13 +5,15 @@ prev: docs/autopayments/api
 next: docs/autopayments/sdk
 ---
 
-Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
 
-Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values. Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
+Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
+
+If you want to test out the system, just go [here.](#test)
 
 ## Easily accept auto-payments on Ethereum
 
-Shakespay checkout makes it easy for you to start receiving recurring payments. You can embed it directly into your website or redirect users for them to checkout. With over 150+ currency support, you can start receiving value from anywhere in the world. For now it only allows recurring payments.
+Shakespay Checkout simplifies the process of receiving recurring payments. You can either embed it directly into your website or redirect users to complete their checkout. With support for over 300 currencies, you can receive payments from anywhere in the world. We now accept both one-time payments and recurring payments.
 
 <div
 style="display: flex;">
@@ -52,7 +54,7 @@ const config = {
     "token_address": [],
     "should_split": false,
     "redirect_url": REDIRECT_URL,
-    "number": ""
+    "number": "0"
   },
 };
 
@@ -74,11 +76,11 @@ Understand the information needed and parse as advised.
 
 ##### TEST_DELEGATE_ADDRESS
 
-Enter the test delegate address you requested above.
+Enter the test delegate address you received from the [API section](../../../docs/autopayments/api/#request-test-address-user)
 
 ##### CURRENCY_CODE
 
-Currency code that you want to request payment with. Check currency code  s [here](../../autopayments/api#currency-codes)
+Currency code that you want to request payment with. Check currency codes [here](../../autopayments/api#currency-codes)
 
 ##### REDIRECT_URL
 
@@ -86,7 +88,7 @@ Enter URL that the checkout should redirect to if the request is successful.
 
 ##### PERIOD
 
-Period to request payment. Make sure it is in seconds.
+Period to request payment. Make sure it is in [seconds](../../autopayments/integration#period).
 
 #### Response
 
@@ -98,7 +100,7 @@ Period to request payment. Make sure it is in seconds.
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
+Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
 {{< /callout >}}
 
 ## Get started
@@ -127,8 +129,8 @@ const config = {
     network: Network,
     period: Period,
     description: user_delegate_address,
-    redirect_url: Splitters,
-    number: split_amounts,
+    redirect_url: url,
+    number: Splitters,
     currency_code: code,
     amount: Amount,
     token_address: Token,
@@ -154,7 +156,7 @@ Understand the information needed and parse as advised.
 
 ##### auto_address
 
-Your Business auto account address. Can be found in Dashboard. Depending on Network.
+Your Business auto account address. Can be found in [dashboard](https://users.shakesco.com/login). Depending on Network.
 
 ##### network
 
@@ -162,7 +164,7 @@ Depending on where your Business auto account address is deployed. Enter 1 for E
 
 ##### period
 
-Period to request payment. Make sure it is in seconds
+Period to request payment. Make sure it is in [seconds](../../autopayments/integration#period).
 
 ##### description
 
@@ -173,7 +175,7 @@ Enter your business description. Here you can enter what the subscription is abo
 Enter URL that the checkout should redirect to if the request is successful.
 
 {{< callout type="info" >}}
-It is advised to redirect to a page where you can check if the user has accepted the request from the Shakespay app.
+It is advised to redirect to a page where you can check if the user has accepted the request from the Shakespay app. Accepting is same as checking if [they have paid](../../autopayments/api#has-paid).
 {{< /callout >}}
 
 ##### number

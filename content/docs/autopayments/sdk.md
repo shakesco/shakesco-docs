@@ -5,9 +5,11 @@ prev: docs/autopayments/checkout
 next: docs/private
 ---
 
-Before getting started please get your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business auto account from the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).
 
-Go through [Integration](../../autopayments/integration#requesting-token) to see how to parse values. Also go to [Start](../../autopayments/start) and make sure your auto-payment account will pull payments.
+Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
+
+If you want to test out the system, just go [here.](#test)
 
 ## @shakesco/automation
 
@@ -29,11 +31,15 @@ const { Automation, parseUnits } = require("@shakesco/automation");
 
 ### Test
 
+{{< callout type="info" >}}
+We fund your test delegate address automatically, so you don't need to enter an amount in testing mode.
+{{< /callout >}}
+
 Before getting started, send a test request to make sure everthing is okay.
 
 #### Request test address
 
-First request a delegate address. Enter your business smart wallet address, either one between Ethereum and Polygon, plus api key:
+First, request a delegate address by entering your business smart wallet address (it's the same for both Ethereum and Polygon) along with your API key:
 
 ```javascript {filename="index.js"}
   const your_smart_wallet_address = "";
@@ -80,14 +86,14 @@ Then send a request:
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business account side, if you request user, check on Personal account side.
+Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
 {{< /callout >}}
 
 ### Live
 
 {{< callout type="info" >}}
 Visit [__Shakesco__](https://shakesco.com/pricing "Shakesco") to get fee rates and then get your api keys [here](https://users.shakesco.com).  
-If you want to see the fee charged for every transaction, go [__here__](../../autopayments/integration#fees "here")
+If you want to see the fee charged for every transaction, go [__here__](https://shakesco.com/charges "Shakesco")
 {{< /callout >}}
 
 #### Request user
@@ -118,6 +124,10 @@ Period should be in seconds. Amount should be in USD. Eg: "20" is in USD. Boolea
 {{< /callout >}}
 
 #### Request Split payment
+
+{{< callout type="info" >}}
+Read about split payments [__here__](../../autopayments/integration#split)
+{{< /callout >}}
 
 When you want to request split payment:
 
