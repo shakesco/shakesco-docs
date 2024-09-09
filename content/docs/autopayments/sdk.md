@@ -2,7 +2,7 @@
 title: SDK
 type: docs
 prev: docs/autopayments/checkout
-next: docs/private
+next: docs/silent
 ---
 
 Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://apps.apple.com/us/app/shakespay-bitcoin-ethereum/id6478241603).

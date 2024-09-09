@@ -1,8 +1,8 @@
 ---
 title: Stealth payments
 type: docs
-prev: docs/autopayments/sdk
-next: docs/userop/
+prev: docs/silent/integration
+next: docs/private/integration
 sidebar:
   open: true
 ---
@@ -17,7 +17,11 @@ can't move their activities to crypto because their pivate financial activity wi
 
 ### How it works
 
-Now if Charles wants to send Alice some funds he will have to generate a random number **`r`** multiply it with Alice's public key **`P`** and the send funds to the address generated from the resulting public key. In math terms: **`P * r`** = **`P'`**. Elliptic curve math helps us produces the private key of the resulting address by just taking the private key of the receiver and multiplying it with the random number **`r`**. **`p * r`** = **`s`**. Now Alice can spend the funds from the newly generated address and Bob has no idea that Alice received money from charles. As pointed out by [**Stealth payments**](https://eips.ethereum.org/EIPS/eip-5564 "Private") we take a different approach to avoid storing users private key. Alice generates view and spending key pairs and makes the public keys **`P_view`** and **`P_spend`** public. Now when Charles want to send Alice some funds he will generate a random number **`r`** and multiply it with **`P_spend`** to generate the stealth address. He then encrypts **`r`** with **`P_view`** and a random ephemeral private key. He sends funds to the stealth address and also sends the encrypted random number **`r`** and ephemeral public key outputted from the encryption for alice to prove funds belong to her. Alice starts computation by taking her view private key **`p_view`** and ephemeral public key received from charles and decrypts the random number. She then multiplies **`r`** with the spending private key **`p_spend`** and computes an address from this private key. If the address matches the stealth address charles sent funds to she owns the funds.
+{{< callout type="info" >}}
+Lowercase represent private keys. Upper case represent public key. `·` represents scalar multiplication.
+{{< /callout >}}
+
+Now if Charles wants to send Alice some funds he will have to generate a random number **`r`** multiply it with Alice's public key **`P`** and the send funds to the address generated from the resulting public key. In math terms: **`P · r`** = **`P'`**. Elliptic curve math helps us produces the private key of the resulting address by just taking the private key of the receiver and multiplying it with the random number **`r`**. **`p · r`** = **`s`**. Now Alice can spend the funds from the newly generated address and Bob has no idea that Alice received money from charles. As pointed out by [**Stealth payments**](https://eips.ethereum.org/EIPS/eip-5564 "Private") we take a different approach to avoid using your private key to scan for funds. Alice generates view and spending key pairs and makes the public keys **`P_view`** and **`P_spend`** public. Now when Charles want to send Alice some funds he will generate a random number **`r`** and multiply it with **`P_spend`** to generate the stealth address. He then encrypts **`r`** with **`P_view`** and a random ephemeral private key [**(Elliptic Curve Diffie-Hellman)**](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman "ECDH"). He sends funds to the stealth address and also sends the encrypted random number **`r`** and ephemeral public key outputted from the encryption for alice to prove funds belong to her. Alice starts computation by taking her view private key **`p_view`** and ephemeral public key received from charles and decrypts the random number. She then multiplies **`r`** with the spending private key **`p_spend`** and computes an address from this private key. If the address matches the stealth address charles sent funds to, she owns the funds.
 
 ## Next
 

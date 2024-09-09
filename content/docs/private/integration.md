@@ -1,4 +1,9 @@
-# Shakesco Stealth Addresses
+---
+title: Stealth Address Integration
+type: docs
+prev: docs/private/
+next: docs/userop
+---
 
 > Special credit to [_umbra-cash_](https://app.umbra.cash/ "Umbra").
 
@@ -168,3 +173,12 @@ const response = await txResponse.wait();
 ```
 
 You have successfully sent a private transaction. We aim to help umbra expand the adoption of stealth payments. This will however be replaced by ZK but this is a good start to make ethereum more private!
+
+### Contribute
+
+If you love what we do to progress privacy, [contribute](https://me-qr.com/text/ytOt1BKQ "eth_addr") to further development
+
+<img
+src="/images/ethereum_address.png"  
+alt="eth_addr" width="300"  
+height="200">
