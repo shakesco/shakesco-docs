@@ -10,7 +10,7 @@ For autopayments to be possible their must be a pull and a push. When you give [
 
 ## Problem
 
-So we are trying to solve a number of issues with this system. We are trying to create a permissionless, censorship-resistant, self-custody and decentralized system. Permissionless in that anyone with an internet connection can perform autopayments, we cannot sensor them, we don't control it and the self-custody part makes it interesting in that you can set up autopayments with anyone not just restricted to businesses.
+So we are trying to solve a number of issues with this system. We are trying to create a permissionless, censorship-resistant, self-custody and decentralized system. Permissionless in that anyone with an internet connection can perform autopayments, we cannot censor them, we don't control it and the self-custody part makes it interesting in that you can set up autopayments with anyone not just restricted to businesses.
 Ethereum has two accounts, EOA(Externally Owned Accounts) and contract accounts. EOAs are not programmable so creating an automation system is not possible. Even if we did setup a contract that the EOA would deploy and control, it would be cumbersome for the payer because we would require them to sign everytime the system wants to perform auto-payments. Contract accounts on the other hand cannot initiate a transaction. They must originate from the EOA.
 
 ### Solution
@@ -58,7 +58,7 @@ Thankfully we have done the work for you. Polygon:
 
 #### Split
 
-Split payments for recurring payments are here! This is only for C2B transactions. `requestUser` from the [SDK](../../autopayments/sdk) and `/request` from the [API](../../autopayments/api) are now editted to allow split payments. When you are requesting users do they want to split payment with their friends? Set `wantstosplit` from the [SDK](../../autopayments/sdk) or `should_split` from the [API](../../autopayments/api), to true or false accordingly. If true populate `split` and `splitamount` with the number of users who will be participating in the split payment. Make sure they are the same length.
+Split payments for recurring payments are here! This is only for C2B transactions. `requestUser` from the [SDK](../../autopayments/sdk) and `/request` from the [API](../../autopayments/api) are now editted to allow split payments. When you are requesting users, do they want to split payment with their friends? Set `wantstosplit` from the [SDK](../../autopayments/sdk) or `should_split` from the [API](../../autopayments/api), to true or false accordingly. If true populate `split` and `splitamount` with the number of users who will be participating in the split payment. Make sure they are the same length.
 
 ##### Things to note on split
 
@@ -67,7 +67,7 @@ This is important please note the following
 {{< /callout >}}
 
 - Make sure `split` and `splitamount` are the same length.
-- The `address` parameter in `requestUser` [SDK](../../autopayments/sdk) or the `delegate_address` in `/request` [API](../../autopayments/api), is the 'group leader' in the split payment. If all split members pay, the service will **ONLY** be given to `address`.
+- The `address` parameter in `requestUser` [SDK](../../autopayments/sdk) or the `delegate_address` in `/request` [API](../../autopayments/api), is the 'group leader' in the split payment. If all split members pay, the service will **ONLY** be given to `address` / `delegate_address`.
 - **Unless you want them to select how much each should pay,** `splitamount` should be set by you to avoid bad user experience. If there are 3 split participants + the 'group leader' just say eg: 20 / 4, push 5 to `splitamount` array 3 times and then set another 5 on the `amount` parameter for the `address` parameter.
 - Check that all participants have been requested. Use `isRequested` in [SDK](../../autopayments/sdk) or `/request_sent` from [API](../../autopayments/api) to loop through the `split` participants and check that all participants have been requested.
 - Be careful with the number of participants you allow. A small number of participants is advised so that your business does not get less value. Split payment is for services that previously had one person paying while others didn't have to pay as the payer could just share the log in information with them. With split payment, each would have to pay but the total amount will be split among them. This will be more beneficial to your business than the traditional system!
@@ -130,10 +130,10 @@ Please note fees. For every pull from a user a **3%** fee is charged on the pric
 #### Invoices
 
 {{< callout type="info" >}}
-Invoices are provided to your customers once they make payment. If you are on free-tier, you can only send 10,000 invoices, other invoices will be charged 0.5% of the amount paid. If you are on any paid tier, there is no cap on the number of invoices sent.
+Invoices are provided to your customers when they want to make payment. If you are on free-tier, you can only send 10,000 invoices, other invoices will be charged 0.5% of the amount paid. If you are on any paid tier, there is no cap on the number of invoices sent.
 {{< /callout >}}
 
-Invoices help your customers prove that they made payment for a certain services. They are now available on Shakespay. Once payment is made invoice is sent to your customer.
+Invoices help your customers make payment for a certain services. They are now available on Shakespay. Once payment is made receipt is sent to your customer.
 
 #### Discount period
 

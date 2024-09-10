@@ -131,7 +131,7 @@ const config = {
     "period": PERIOD,
     "amount": "0",
     "token_address": "",
-    "should_split": "false",
+    "should_split": false,
     "splitters": [],
     "splitters_amount": []
   },
