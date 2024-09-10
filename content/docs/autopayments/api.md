@@ -127,7 +127,7 @@ const config = {
     "auto_address": "0x309E7d835ccE6E74BC72A2E523fa7f79FFC0d413",
     "network": "11155111",
     "delegate_address": YOUR_TEST_DELEGATE_ADDRESS,
-    "currency_code": "",
+    "currency_code": "USD",
     "period": PERIOD,
     "amount": "0",
     "token_address": "",
@@ -213,18 +213,45 @@ axios
 
 #### Info
 
-```shell {filename="info.txt"}
-user_delegate_address: "Users Shakespay card/ Business card address."
-your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
-Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
-Period: "Period to request payment. Make sure it is in seconds"
-Amount: "Amount to request. Parse amount depending on the currency code."
-code: "Currency code that you want to request payment with"
-Token: "If you want token. Enter the token address. If you want to request Ethereum or Polygon, enter an empty string."
-Split: "If you want to allow split payment. Enter true or false."
-Splitters: "Address of splitters. Enter an empty array if you don't want split autopayment."
-split_amounts: "Amount each splitter will pay. Parse depending on currency code"
-```
+##### user_delegate_address
+
+User's Shakespay card/ Business card address.
+
+##### your_auto_address
+
+Your Business auto account address. Can be found in [Dashboard](https://users.shakesco.com "login"). Depending on Network.
+
+##### Network
+
+Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon
+
+##### Period
+
+Period to request payment. Make sure it is in seconds
+
+##### Amount
+
+Amount to request. Parse amount depending on the currency code.
+
+##### code
+
+Currency code that you want to request payment with
+
+##### Token
+
+If you want to request a token, enter the token address. If you want to request Ethereum or Polygon, enter an empty string.
+
+##### Split
+
+If you want to allow split payment. Enter true or false.
+
+##### Splitters
+
+Addresses of splitters. Enter an empty array if you don't want split auto-payment.
+
+##### split_amounts
+
+Amount each splitter will pay. Parse depending on currency code
 
 #### Response
 
@@ -360,11 +387,17 @@ axios
 
 #### Info
 
-```shell {filename="info.txt"}
-user_delegate_address: "Users Shakespay card/ Business card address."
-your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
-Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
-```
+##### user_delegate_address
+
+User's Shakespay card/ Business card address.
+
+##### your_auto_address
+
+Your Business auto account address. Can be found in [Dashboard](https://users.shakesco.com "login"). Depending on Network.
+
+##### Network
+
+Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon
 
 #### Response
 
@@ -411,11 +444,17 @@ axios
 
 #### Info
 
-```shell {filename="info.txt"}
-user_delegate_address: "Users Shakespay card/ Business card address."
-your_auto_address: "Your Business auto account address. Can be found in Dashboard. Depending on Network."
-Network: "Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon"
-```
+##### user_delegate_address
+
+User's Shakespay card/ Business card address.
+
+##### your_auto_address
+
+Your Business auto account address. Can be found in [Dashboard](https://users.shakesco.com "login"). Depending on Network.
+
+##### Network
+
+Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon
 
 #### Response
 
