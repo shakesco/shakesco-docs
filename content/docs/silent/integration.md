@@ -2,13 +2,13 @@
 title: Bitcoin Silent Payments Integration
 type: docs
 prev: docs/silent
-next: docs/private
+next: docs/private/sdk
 ---
 
 > Special credit to [_cake wallet_](https://github.com/cake-tech/bitcoin_base/tree/cake-update-v5 "cake wallet").
 
 {{< callout type="info" >}}
-This is a Dart package, and we are working on a JavaScript SDK for broader adoption.
+This is a Dart package. To use an SDK go [here](./../sdk).
 {{< /callout >}}
 
 ## @shakesco/bitcoin_base
@@ -37,7 +37,11 @@ You can generate a silent payment address in three ways:
 
 ##### Private Keys
 
-If you are not a wallet provider, use this method. More specifically, you can make the user sign a message and then derive `b_scan` and `b_spend` from the resulting [signature]()(Use `r` as `b_scan` and `s` as `b_spend` or vice versa).
+If you are not a wallet provider, use this method. More specifically, you can make the user sign a message and then derive `b_scan` and `b_spend` from the resulting [signature](https://cryptobook.nakov.com/digital-signatures/ecdsa-sign-verify-messages#ecdsa-sign) (Use `r` as `b_scan` and `s` as `b_spend` or vice versa).
+
+{{< callout type="warning" >}}
+If you are not using this method, ensure that a cryptographically secure random number generator is being used.
+{{< /callout >}}
 
 ```dart {filename="index.dart"}
 void main() {
@@ -52,13 +56,13 @@ void main() {
 }
 ```
 
-##### Mnemoni and HD Key
+##### Mnemonic and HD Key
 
 If you are a wallet provider, use this method.
 
 ```dart {filename="index.dart"}
 void main() {
-  final mnemonic = "";
+  final mnemonic = ""; // 12, 15, 24 word phrase
   final paymentOwner = bitcoin_base.SilentPaymentOwner.fromMnemonic(mnemonic);
   print(paymentOwner.toAddress());
 
@@ -93,7 +97,8 @@ void main() {
   ]).createOutputs([
     bitcoin_base.ECPrivateInfo(
         bitcoin_base.ECPrivate.fromHex(sender_privateKey),
-        false)
+        false // If the output is from a taproot address
+        )
   ], [
     bitcoin_base.SilentPaymentDestination(
         amount: amount,
@@ -115,6 +120,8 @@ Scanning for funds is a drawback of silent payments. So below is how you can che
 1. The transaction input's tx_hash and output_index.
 2. Public key outputted.
 3. Script and amount from the outputted taproot address
+
+For more info, go [here](https://github.com/bitcoin/bips/blob/master/bip-0352.mediawiki#scanning-silent-payment-eligible-transactions)
 
 ```dart {filename="index.dart"}
 void main() {
@@ -184,7 +191,5 @@ Thats it! 🎊🎊🎊
 
 If you love what we do to progress privacy, [contribute](https://me-qr.com/text/vPod5qN0 "btc_addr") to further development
 
-<img
-src="/images/bitcoin_address.png"  
-alt="btc_addr" width="300"  
-height="200">
+<img src="/images/bitcoin_address.png" alt="btc_addr" style="display: inline-block; margin-right: 100px; margin-left: 70px;" width="200" height="200">
+<img src="/images/silent.png" alt="btc_addr" width="200" style="display: inline-block; margin-right: 10px;" height="200">
