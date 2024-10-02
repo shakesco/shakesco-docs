@@ -28,9 +28,9 @@ Shakespay is a smart, MPC-based wallet for Bitcoin and Ethereum. We have develop
 <div
 style="display: flex;">
   <img
-   src="/images/1726.png" alt="User side features" width="300" height="200">
+   src="/images/1776.png" alt="User side features" width="300" height="200">
   <img
-   src="/images/1727.png" alt="Business side features" width="300" height="200">
+   src="/images/911.png" alt="Business side features" width="300" height="200">
 </div>
 
 ## Security
@@ -48,11 +48,11 @@ Shakespay removes the single point of failure that is custom in most wallets. Yo
 <div
 style="display: flex;">
   <img
-  src="/images/image.png"  
+  src="/images/image.jpg"  
   alt="Create wallet" width="300"  
   height="200">
   <img
-  src="/images/image2.png"  
+  src="/images/image2.jpg"  
   alt="Restore wallet" width="300"  
   height="200">
 </div>
