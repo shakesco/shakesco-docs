@@ -8,14 +8,14 @@ next: smart-wallet
 
 ### What is Shakespay?
 
-Shakespay is a smart wallet on Bitcoin and Ethereum. We have built an agglomeration of decentralized financial services that enable everyone to access finance the same way they did in traditional finance. What are some of these features:
+Shakespay is a smart, MPC-based wallet for Bitcoin and Ethereum. We have developed a suite of decentralized financial services that allows everyone to access finance in a way similar to traditional finance, but with enhanced security and efficiency. What are some of these features:
 
 - Buy, send, receive and request Bitcoin and Ethereum.
 - Pay business with Bitcoin and Ethereum.
 - Split pay or pay team directly with Ethereum and Polygon.
 - Private transactions using stealth addresses.
 - Recurring payments that are self-custody!
-- Silent payments on Bitcoin, in BETA.
+- Silent payments on Bitcoin.
 - Auto-payments with friends and family.
 - Group transactions with friends and family.
 - Built in business wallet.
@@ -45,10 +45,17 @@ Shakespay removes the single point of failure that is custom in most wallets. Yo
 
 #### Sign up
 
-<img
-src="/images/image.png"  
-alt="Sign up" width="300"  
-height="200">
+<div
+style="display: flex;">
+  <img
+  src="/images/image.png"  
+  alt="Create wallet" width="300"  
+  height="200">
+  <img
+  src="/images/image2.png"  
+  alt="Restore wallet" width="300"  
+  height="200">
+</div>
 
 ## Next
 

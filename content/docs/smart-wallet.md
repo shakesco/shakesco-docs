@@ -13,9 +13,9 @@ Ethereum has 2 types of accounts: External Owned Accounts(EOA) and Contract acco
 
 ### Why EOAs suck
 
-As Ethereum grew, user realized how awful EOAs were. First, EOAs are vulnerable. With one wrong transaction, you lose everything. This is because asymmetric keys are static. They are the only way to prove to the protocol that you are authorized to perform a computation. So anyone with your keys can perform any computation and the protocol would just accept. Second, EOAs are ugly. You visit a dapp and you have to sign 5 transactions before you can perform a swap for example. Third, gas fee are hard. A user wants to send WBTC but can't do so because they don't have Ether. Lastly and one that is really important is Elliptic Curve Digital Signature Algorithm (ECDSA) will be easily broken by quantum computers. This is because quantum computers will easily solve the discrete logarithm problem that todays computers take years to solve.
+As Ethereum grew, user realized how awful EOAs were. First, EOAs are vulnerable. With one wrong transaction, you lose everything. This is because asymmetric keys are static. They are the only way to prove to the protocol that you are authorized to perform a computation. So anyone with your keys can perform any computation and the protocol would just accept. Second, EOAs are ugly. You visit a dapp and you have to sign 5 transactions before you can perform a swap for example. Third, gas fees are hard. A user wants to send WBTC but can't do so because they don't have Ether. Lastly, and perhaps most importantly, the Elliptic Curve Digital Signature Algorithm (ECDSA) is vulnerable to quantum computers. Quantum computers have the capability to efficiently solve the discrete logarithm problem, a task that would take today's classical computers an impractical amount of time to complete.
 
-So how do we solve all these issues. How do we create an agglomeration of decentralized finance around a wallet? Where you can perform a private transaction, recurring payments, launch tokens, launch NFTs etc.
+So how do we solve all these issues. How do we create an agglomeration of decentralized finance around a wallet? Where you can perform a private transaction, recurring payments, launch tokens, launch NFTs and there is no single point of failure.
 
 ## Shakespay
 
@@ -23,7 +23,7 @@ Shakespay is the FIRST real smart wallet. Our goal is to remove all the issues n
 
 ### Security
 
-We avoid seed phrases. To make Bitcoin and Ethereum more accessible to everyone, we need to make them easy to use. However, we should not sacrifice self-custody! So when you "Sign up with Google" you are actually going through a MPC protocol that generate private shares without any trusted party, this is explained more [here](../multi-party-computation). One share is encrypted and stored securely on the remote server then, using a secure transport layer with [AEAD](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD)) cipher, the other enrypted share is sent to your mobile device. If backed up through Google Drive or Icloud you can have it on any device you want! This removes the single point of failure that is a custom in 99% of todays wallets. How is this self-custody? Well we cannot access YOUR coins because we don't have your share. You and You alone can access and decrypt the remote share stored in the remote server. We are however working on an alternative. You may not trust the remote server. You should have a choice on who has access to those shares. This will however make transacting hard. That why we are supporting protocols like [passport](https://0xpass.io/)
+We avoid seed phrases. To make Bitcoin and Ethereum more accessible to everyone, we need to make them easy to use. However, we should not sacrifice self-custody! So when you see "Sign up with Google" you are actually going through a MPC protocol that generate private shares without any trusted party, this is explained more [here](../multi-party-computation). One share is encrypted and stored securely on the remote server then, using a secure transport layer with [AEAD](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data_(AEAD)) cipher, the other enrypted share is sent to your mobile device. If backed up through Google Drive or Icloud you can have it on any device you want! This removes the single point of failure that is a custom in 99% of todays wallets. How is this self-custody? Well we cannot access YOUR coins because we don't have your share. You and You alone can access and decrypt the remote share stored in the remote server. We are however working on an alternative. You may not trust the remote server. You should have a choice on who has access to those shares. This will however make transacting hard. That why we are supporting protocols like [passport](https://0xpass.io/)
 
 ### Accounts
 
@@ -141,6 +141,6 @@ And that it! That's how Shakespay works! Self-custody and secure.
 Dive right into the following section to get started:
 
 {{< cards >}}
-{{< card link=https://shakesco.com/coming title="Smart wallet" icon="finger-print" subtitle="Deploy smart wallet for your dAPP users" >}}
+{{< card link=https://smart.shakesco.com title="Smart wallet" icon="finger-print" subtitle="Deploy smart wallet for your dAPP users" >}}
 {{< card link="/" title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
 {{< /cards >}}

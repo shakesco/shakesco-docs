@@ -5,7 +5,8 @@ layout: hextra-home
 
 <div class="hx-mt-6 hx-mb-6">
 {{< hextra/hero-headline >}}
-  Smart Wallet&nbsp;<br class="sm:hx-block hx-hidden" />
+  Smart and &nbsp;<br class="sm:hx-block hx-hidden" />
+  MPC-based Wallet&nbsp;<br class="sm:hx-block hx-hidden" />
   for Bitcoin and Ethereum.
 {{< /hextra/hero-headline >}}
 </div>

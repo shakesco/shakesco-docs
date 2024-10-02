@@ -32,9 +32,9 @@ title: Contract Addresses
 
 | Contract Name        | Address           | Purpose  |
 | ------------- |:-------------:| -----:|
-| FromShakespay  | 0x55ba8D9806583606504BDAc0A4ec66a1D88D1619 | Saving Raffle  |
-| ShakescoDelegateAccountFactory  | 0x74A373011D0E7068F1C71aceE4e9dA23E1628a0c | Personal Card wallet factory |
-| ShakescoDelegateBusinessFactory  | 0x002E401b8BAC832AdF3686D5394D22B937C80d9E | Business Card wallet factory |
+| FromShakespay  | 0x4CF0FB9086c63f0273997be5cB1275ebB123773F | Saving Raffle  |
+| ShakescoDelegateAccountFactory  | 0xdeBC6094634F4f75dF903abB5808d13dd8A68AEf | Personal Card wallet factory |
+| ShakescoDelegateBusinessFactory  | 0x639A2b02159e78d1f033fEF8A488C9c5052eF2c0 | Business Card wallet factory |
 | ShakescoGroupFactory | 0xE859d17685Bf0D56F2b112ff7d0FCe2276E85545 | Personal Group Wallet factory |
 | ShakescoRegisterAutomation | 0x9FD92917d2AE4d766b54cc103E0A4f38688F27A7 | Chainlink automation registry |
 | ShakescoSwap | 0xa6E9774BF73753D8d019895Ec94E33F19A02d28b | Swap contract |
