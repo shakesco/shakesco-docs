@@ -32,7 +32,7 @@ When you want to open a Savings, Card or Auto account in Shakespay you get hit w
 <div
  style="display: flex;">
   <img
-   src="/images/54118.jpg" alt="User side features" width="300" height="200">
+   src="/images/delegate.jpg" alt="User side features" width="300" height="200">
 </div>
 
 Seem centralized. Well its not! Actually when you submit a [transaction](https://polygonscan.com/tx/0xed78887c71b2d2cb2240eaaa27d368810d646824360bc9969a2c4311f03e35fd) you can see you are calling a contract. What's happening here?
