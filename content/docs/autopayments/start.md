@@ -26,11 +26,19 @@ From your Dashboard, you can view your Chainlink balance and the minimum require
 To add funds, open the app and navigate to your Business Auto account on the wallet page. Select the account you want to view. You should see a page similar to the one below:
 
 <img
-src="/images/1830.png"  
+src="/images/auto.jpg"  
 alt="Dashboard" width="300"  
 height="200">
 
 Go to fund, enter the amount you want to fund, and your smart wallet will take care of the rest.
+
+<div
+style="display: flex;">
+  <img
+   src="/images/manage.jpg" alt="Manage" width="300" height="200">
+  <img
+   src="/images/fund.jpg" alt="fund" width="300" height="200">
+</div>
 
 ### Fee
 
@@ -40,10 +48,10 @@ You will not be able to send any request to the user without adding the fee. You
 To fund your fee account, go the same page as above:
 
 <img
-src="/images/1831.png"  
+src="/images/auto.jpg"  
 alt="Dashboard" width="300"  
 height="200">
 
-Go the button circled above, enter amount and check to see that your fee balance reflects on the dashboard.
+Click the gas icon, enter amount and check to see that your fee balance reflects on the dashboard.
 
 With that you are ready to accept auto-payment on Ethereum or Polygon 🥳
