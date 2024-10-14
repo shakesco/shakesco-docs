@@ -142,5 +142,5 @@ Dive right into the following section to get started:
 
 {{< cards >}}
 {{< card link=https://smart.shakesco.com title="Smart wallet" icon="finger-print" subtitle="Deploy smart wallet for your dAPP users" >}}
-{{< card link="/" title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
+{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
 {{< /cards >}}

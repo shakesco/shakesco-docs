@@ -68,5 +68,5 @@ Dive right into the following section to get started:
 
 {{< cards >}}
 {{< card link="autopayments" title="Accept auto-payments" icon="refresh" subtitle="Start accepting stablecoins, Ethereum or Polygon from users or businesses" >}}
-{{< card link="/" title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
+{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
 {{< /cards >}}
