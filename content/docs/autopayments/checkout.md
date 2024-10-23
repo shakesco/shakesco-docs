@@ -18,7 +18,7 @@ Shakespay Checkout simplifies the process of receiving recurring payments. You c
 <div
 style="display: flex;">
   <img
-   src="/images/checkout.png" alt="User side features">
+   src="https://res.cloudinary.com/dtz5vn3yl/image/upload/v1729693707/xmj6kl97px07siymgkl5.png" alt="User side features">
 </div>
 
 ## Test

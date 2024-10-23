@@ -26,7 +26,7 @@ layout: hextra-home
     title="Checkout in secondsss 🤑"
     subtitle="Use our built in checkout system to easily accept recurring payments on Ethereum and Polygon !!!"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
-    image="images/checkout.png"
+    image="https://res.cloudinary.com/dtz5vn3yl/image/upload/v1729693707/xmj6kl97px07siymgkl5.png"
     imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
