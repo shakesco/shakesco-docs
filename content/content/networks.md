@@ -22,6 +22,7 @@ _These are the tokens we are currently supporting!_
 | Wrapped Bitcoin  | WBTC | 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599 |
 | Tether USDt      | USDT | 0xdAC17F958D2ee523a2206206994597C13D831ec7 |
 | USDC             | USDC | 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 |
+| DAI Stablecoin   | DAI | 0x6B175474E89094C44Da98b954EedeAC495271d0F |
 
 #### Polygon
 
@@ -31,3 +32,4 @@ _These are the tokens we are currently supporting!_
 | Wrapped Ethereum | WETH | 0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619 |
 | Tether USDt      | USDT | 0xc2132D05D31c914a87C6611C10748AEb04B58e8F |
 | USDC             | USDC | 0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359 |
+| DAI Stablecoin   | DAI | 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063 |

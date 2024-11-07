@@ -1,5 +1,5 @@
 ---
-title: Account abstraction
+title: Account Abstraction
 type: docs
 prev: docs/
 next: docs/Multi-Party Computation

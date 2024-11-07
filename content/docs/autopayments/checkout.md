@@ -1,5 +1,5 @@
 ---
-title: Ethereum Auto-payment Checkout
+title: Checkout
 type: docs
 prev: docs/autopayments/api
 next: docs/autopayments/sdk
@@ -198,24 +198,24 @@ Amount to request. Parse amount depending on the currency code.
 
 Here enter an array of all the tokens and/or coins you want to accept.
 
-Eg: ["Polygon", "WETH", "WBTC"]
+Eg: ["Polygon", "WETH", "DAI"]
 
 Here are the tokens and coins your auto account supports:
 
 ###### Polygon
 
 1. **Polygon**
-2. **WBTC**
-3. **WETH**
-4. **USDT**
-5. **USDC**
+2. **WETH**
+3. **USDT**
+4. **USDC**
+5. **DAI**
 
 ###### Ethereum
 
 1. **Ethereum**
-2. **WBTC**
-3. **USDT**
-4. **USDC**
+2. **USDT**
+3. **USDC**
+4. **DAI**
 
 Tokens and coins are displayed the way you parse them in the array.
 
