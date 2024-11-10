@@ -75,6 +75,7 @@ This is important please note the following
 - There is no grace period for split participants.
 - If a user is switching from split pull to personal pull, they will have to pay again, **the full amount** to start their own timeline. If they won't pay again at that time, service will not be provided.
 - If a user is switching group members, please tell them to accept again. This is important so they can be marked as paid. If not the next time your autopayment system will run the pull payment they will be marked as paid.
+- If a user was in group and then switches to single recurring payment, they will pay the full amount, regardless if they paid in their group auto-payment or not.
 - [One time payment](../../autopayments/integration#one-time-payment) are available for split payments
 
 #### Changing amount
