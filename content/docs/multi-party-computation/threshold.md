@@ -9,7 +9,7 @@ next: docs/autopayments/
 
 > _This sections borrows from [Binance](https://github.com/bnb-chain/tss-lib "tss.lib")_
 
-Threshold cryptography or __TSS__ is used in this case to secure wallets for shakespay users.
+Threshold cryptography or __TSS__ is used in this case to secure wallets for shakesco users.
 Rather than having a single private key that can be exploited by an attacker with adequate
 resources and time, the system distributes shares of this private key _`a`_ to _`n`_ parties
 where _`t+1`_ parties can provide a valid signature for any computation they want to achieve, in

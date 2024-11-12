@@ -27,4 +27,4 @@ Smart wallets enable more functionality. You can batch transactions, build your 
 
 #### Smart Wallets + MPC is better
 
-Smart wallets provide more functionality than standard EOA wallets, enabling private transactions, recurring payments, and more, aiming to create a Venmo or PayPal alternative on Ethereum. There has been debate on whether Ethereum should adopt smart wallets or MPC wallets, but these technologies are not mutually exclusive. As seen on Shakespay, they can be complementary. Shakespay uses MPC for key management and smart wallets for account management.
+Smart wallets provide more functionality than standard EOA wallets, enabling private transactions, recurring payments, and more, aiming to create a Venmo or PayPal alternative on Ethereum. There has been debate on whether Ethereum should adopt smart wallets or MPC wallets, but these technologies are not mutually exclusive. As seen on Shakesco, they can be complementary. Shakesco uses MPC for key management and smart wallets for account management.

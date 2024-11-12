@@ -1,5 +1,5 @@
 ---
-title: Shakespay
+title: Shakesco
 layout: hextra-home
 ---
 

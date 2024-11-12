@@ -17,9 +17,9 @@ Ethereum has two accounts, EOA(Externally Owned Accounts) and contract accounts.
 
 [Account abstraction](https://eips.ethereum.org/EIPS/eip-4337) is an Ethereum standard that aims to turn every account on Ethereum to a programmable account. This standard will help us solve the problem with Ethereum accounts. We can now create a contract that doesn't care about the how(signature) but cares about the who(address) that's initiating auto-payments. This helps us make the system decentralized in that not just one entity is making the push/pull calls and the user still keeps custody of his private information(private keys).
 
-### How shakespay works
+### How shakesco works
 
-Shakespay works as explained above but we made some changes due to our Security architecture. Users and businesses can set up auto-payments the same way they do, or even much easier, with other payment infrastructure. You ask the payee for their identity, then you set the amount and period. Here we are going to explain how Customer to Business(C2B) or Business to Business(B2B) works:
+Shakesco works as explained above but we made some changes due to our Security architecture. Users and businesses can set up auto-payments the same way they do, or even much easier, with other payment infrastructure. You ask the payee for their identity, then you set the amount and period. Here we are going to explain how Customer to Business(C2B) or Business to Business(B2B) works:
 
 #### Autopayment works only once
 
@@ -92,7 +92,7 @@ Same as amount, when you want to change period, feel free to do so. The service 
 
 #### Requests
 
-For you to start pulling payments, you need to make a pull request. So you use the request method, `requestUser` or `requestBusiness` from the [SDK](../../autopayments/sdk) or the `/request` from [API](../../autopayments/api), request the user and await approval (Tell user/business to accept request from shakespay app). The reason we did this is because your wallet is guarded by [TSS(Threshold Signature Scheme)](../../multi-party-computation/threshold) meaning when creating a wallet, you went through a protocol that split shares between you and a remote server. This will make it cumbersome for your ui to integrate so we took this approach.
+For you to start pulling payments, you need to make a pull request. So you use the request method, `requestUser` or `requestBusiness` from the [SDK](../../autopayments/sdk) or the `/request` from [API](../../autopayments/api), request the user and await approval (Tell user/business to accept request from shakesco app). The reason we did this is because your wallet is guarded by [TSS(Threshold Signature Scheme)](../../multi-party-computation/threshold) meaning when creating a wallet, you went through a protocol that split shares between you and a remote server. This will make it cumbersome for your ui to integrate so we took this approach.
 
 #### Payment
 

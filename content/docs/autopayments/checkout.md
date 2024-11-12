@@ -5,7 +5,7 @@ prev: docs/autopayments/api
 next: docs/autopayments/sdk
 ---
 
-Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://get.shakesco.com).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakesco app](https://get.shakesco.com).
 
 Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
 
@@ -13,7 +13,7 @@ If you want to test out the system, just go [here.](#test)
 
 ## Easily accept auto-payments on Ethereum
 
-Shakespay Checkout simplifies the process of receiving recurring payments. You can either embed it directly into your website or redirect users to complete their checkout. With support for over 300 currencies, you can receive payments from anywhere in the world. We now accept both one-time payments and recurring payments.
+Shakesco Checkout simplifies the process of receiving recurring payments. You can either embed it directly into your website or redirect users to complete their checkout. With support for over 300 currencies, you can receive payments from anywhere in the world. We now accept both one-time payments and recurring payments.
 
 <div
 style="display: flex;">
@@ -100,7 +100,7 @@ Period to request payment. Make sure it is in [seconds](../../autopayments/integ
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
+Check if the request is sent to your Shakesco app. If you request business check on Business wallet side, if you request user, check on Personal wallet side.
 {{< /callout >}}
 
 ## Get started
@@ -175,7 +175,7 @@ Enter your business description. Here you can enter what the subscription is abo
 Enter URL that the checkout should redirect to if the request is successful.
 
 {{< callout type="info" >}}
-It is advised to redirect to a page where you can check if the user has accepted the request from the Shakespay app. Accepting is same as checking if [they have paid](../../autopayments/api#has-paid).
+It is advised to redirect to a page where you can check if the user has accepted the request from the Shakesco app. Accepting is same as checking if [they have paid](../../autopayments/api#has-paid).
 {{< /callout >}}
 
 ##### number

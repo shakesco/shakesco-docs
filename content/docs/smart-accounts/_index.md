@@ -17,9 +17,9 @@ As Ethereum grew, user realized how awful EOAs were. First, EOAs are vulnerable.
 
 So how do we solve all these issues. How do we create an agglomeration of decentralized finance around a wallet? Where you can perform a private transaction, recurring payments, launch tokens, launch NFTs and there is no single point of failure.
 
-## Shakespay
+## Shakesco
 
-Shakespay is the FIRST real smart wallet. Our goal is to remove all the issues named above. From better security to agglomeration of decentralized services we have done exactly that! Let's get to the specifics:
+Shakesco is the smart and MPC-based wallet. Our goal is to remove all the issues named above. From better security to agglomeration of decentralized services we have done exactly that! Let's get to the specifics:
 
 ### Security
 
@@ -27,7 +27,7 @@ We avoid seed phrases. To make Bitcoin and Ethereum more accessible to everyone,
 
 ### Accounts
 
-When you want to open a Savings, Card or Auto account in Shakespay you get hit with this page:
+When you want to open a Savings, Card or Auto account in Shakesco you get hit with this page:
 
 <div
  style="display: flex;">
@@ -134,7 +134,7 @@ function executeBatch(
     }
 ```
 
-And that it! That's how Shakespay works! Self-custody and secure.
+And that it! That's how Shakesco works! Self-custody and secure.
 
 ## Next
 
@@ -142,5 +142,5 @@ Dive right into the following section to get started:
 
 {{< cards >}}
 {{< card link=https://smart.shakesco.com title="Smart wallet" icon="finger-print" subtitle="Deploy smart wallet for your dAPP users" >}}
-{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
+{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakesco is the ultimate smart wallet, i wanna sign up!" >}}
 {{< /cards >}}

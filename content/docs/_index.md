@@ -4,11 +4,11 @@ title: Introduction
 next: smart-wallet
 ---
 
-## Shakespay
+## Shakesco
 
-### What is Shakespay?
+### What is Shakesco?
 
-Shakespay is a smart, MPC-based wallet for Bitcoin and Ethereum. We have developed a suite of decentralized financial services that allows everyone to access finance in a way similar to traditional finance, but with enhanced security and efficiency. What are some of these features:
+Shakesco is a smart, MPC-based wallet for Bitcoin and Ethereum. We have developed a suite of decentralized financial services that allows everyone to access finance in a way similar to traditional finance, but with enhanced security and efficiency. What are some of these features:
 
 - Buy, send, receive and request Bitcoin and Ethereum.
 - Pay business with Bitcoin and Ethereum.
@@ -35,13 +35,13 @@ style="display: flex;">
 
 ## Security
 
-Shakespay makes it easy for you to start using Bitcoin and Ethereum through sign in with Google or Apple, no seed phrases! But how do we make it self-custody? Well Multi-party Computation, or simply MPC.
+Shakesco makes it easy for you to start using Bitcoin and Ethereum through sign in with Google or Apple, no seed phrases! But how do we make it self-custody? Well Multi-party Computation, or simply MPC.
 
 ### What is MPC?
 
 Multi-Party Computation (MPC) is an advanced cryptographic method that allows multiple parties to collaboratively compute a function over their private inputs, ensuring that no single party learns anything beyond the final result. This technique enables parties to jointly perform calculations on their private data without disclosing the data itself, thereby maintaining privacy and confidentiality.
 
-Shakespay removes the single point of failure that is custom in most wallets. You hold a share but cannot perform any computation without an encrypted share stored in a remote server, which is only accessible and decrypted with your authorization. If your share is compromised, you can reshare your private key and get a new one without changing your public key and hence your address remains the same.
+Shakesco removes the single point of failure that is custom in most wallets. You hold a share but cannot perform any computation without an encrypted share stored in a remote server, which is only accessible and decrypted with your authorization. If your share is compromised, you can reshare your private key and get a new one without changing your public key and hence your address remains the same.
 
 #### Sign up
 
@@ -68,5 +68,5 @@ Dive right into the following section to get started:
 
 {{< cards >}}
 {{< card link="autopayments" title="Accept auto-payments" icon="refresh" subtitle="Start accepting stablecoins, Ethereum or Polygon from users or businesses" >}}
-{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakespay is the ultimate smart wallet, i wanna sign up!" >}}
+{{< card link=https://get.shakesco.com title="Download" icon="device-mobile" subtitle="I am convinced Shakesco is the ultimate smart wallet, i wanna sign up!" >}}
 {{< /cards >}}

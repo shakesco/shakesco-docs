@@ -5,7 +5,7 @@ prev: docs/autopayments/start
 next: docs/autopayments/sdk
 ---
 
-Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://get.shakesco.com).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakesco app](https://get.shakesco.com).
 
 Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
 
@@ -168,7 +168,7 @@ axios
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
+Check if the request is sent to your Shakesco app. If you request business check on Business wallet side, if you request user, check on Personal wallet side.
 {{< /callout >}}
 
 ### Live Request
@@ -215,7 +215,7 @@ axios
 
 ##### user_delegate_address
 
-User's Shakespay card/ Business card address.
+User's Shakesco card/ Business card address.
 
 ##### your_auto_address
 
@@ -389,7 +389,7 @@ axios
 
 ##### user_delegate_address
 
-User's Shakespay card/ Business card address.
+User's Shakesco card/ Business card address.
 
 ##### your_auto_address
 
@@ -446,7 +446,7 @@ axios
 
 ##### user_delegate_address
 
-User's Shakespay card/ Business card address.
+User's Shakesco card/ Business card address.
 
 ##### your_auto_address
 

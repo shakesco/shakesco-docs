@@ -5,7 +5,7 @@ prev: docs/autopayments/checkout
 next: docs/silent
 ---
 
-Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakespay app](https://get.shakesco.com).
+Before getting started, please obtain your API keys from the [dashboard](https://users.shakesco.com/login) and deploy your Business Auto account through the [Shakesco app](https://get.shakesco.com).
 
 Refer to the [Integration](../../autopayments/integration#requesting-token) guide for instructions on parsing values. Additionally, visit the [Start](../../autopayments/start) section to ensure your auto-payment account is configured to process payments.
 
@@ -86,7 +86,7 @@ Then send a request:
 ```
 
 {{< callout type="info" >}}
-Check if the request is sent to your Shakespay app. If you request business check on Business wallet side, if you request user, check on [Personal wallet side](https://x.com/shakespay/status/1820573879334576486).
+Check if the request is sent to your Shakesco app. If you request business check on Business wallet side, if you request user, check on Personal wallet side.
 {{< /callout >}}
 
 ### Live
@@ -98,7 +98,7 @@ If you want to see the fee charged for every transaction, go [__here__](https://
 
 #### Request user
 
-Send request to user. Ask user for Shakespay card/ Business card address.
+Send request to user. Ask user for Shakesco card/ Business card address.
 
 ```javascript {filename=index.js}
   const address = /* Initialize your automation address. Can be found in your dashboard https://users.shakesco.com */
@@ -109,7 +109,7 @@ Send request to user. Ask user for Shakespay card/ Business card address.
 
   const amount = parseUnits("20", 18); //amount to request regularly
 
-  const delegateAddress = /*Ask user/business for their Shakespay card/delegate/business card ONLY.*/;
+  const delegateAddress = /*Ask user/business for their Shakesco card/delegate/business card ONLY.*/;
 
   const requestUser = await shakescocontract.requestUser(delegateAddress, "", period, amount, false, [], []);//request user
 
@@ -132,15 +132,15 @@ Read about split payments [__here__](../../autopayments/integration#split)
 When you want to request split payment:
 
 ```javascript {filename=index.js}
-  const address = /* Initialize your automation/Shakespay auto/business auto address. Can be found in your dashboard https://users.shakesco.com */
+  const address = /* Initialize your automation/Shakesco auto/business auto address. Can be found in your dashboard https://users.shakesco.com */
 
   const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "1");
 
   const period = "604800" //1 week
 
-  const mainAddress = /** Users Shakespay card/delegate/business card ONLY.*/
+  const mainAddress = /** Users Shakesco card/delegate/business card ONLY.*/
 
-  const friends = ["", ""]; //request friend details. Shakespay card/delegate/business card ONLY.
+  const friends = ["", ""]; //request friend details. Shakesco card/delegate/business card ONLY.
 
   const friendsAmount = [parseUnits("10", 18), parseUnits("10", 18)];
 
@@ -182,7 +182,7 @@ When you want to request a token:
 
   const amount = parseUnits("20", 18); //amount to request regularly
 
-  const delegateAddress = /*Ask user/business for their Shakespay card/delegate/business card ONLY.*/
+  const delegateAddress = /*Ask user/business for their Shakesco card/delegate/business card ONLY.*/
 
   const tokenAddress = "" //Make sure it is checksummed
 
@@ -205,7 +205,7 @@ To check if user has made payment or not:
 ```javascript {filename=index.js}
   const address = /*Initialize your automation address*/
 
-  let delegateAddress = /*Request user for their info: Shakespay card/delegate/business card address ONLY*/
+  let delegateAddress = /*Request user for their info: Shakesco card/delegate/business card address ONLY*/
 
   const shakescocontract = new Automation(address, process.env.SHAKESCOAPIKEY, "137");
 

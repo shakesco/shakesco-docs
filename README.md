@@ -1,3 +1,3 @@
 # Shakesco Docs
 
-This is the Shakespay documentation
+This is the Shakesco documentation

@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: Shakespay
+title: Shakesco
 baseURL: https://docs.shakesco.com
 languageCode: en-us
 theme: hextra
@@ -45,11 +45,6 @@ menu:
       url: "https://github.com/shakesco"
       params:
         icon: github
-    - name: Twitter
-      weight: 6
-      url: "https://twitter.com/shakespay"
-      params:
-        icon: x-twitter
 
   sidebar:
     - identifier: more
