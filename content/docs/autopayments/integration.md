@@ -125,7 +125,7 @@ Please enter amount in USD if using SDK. Convert from local currency accordingly
 #### Fees
 
 {{< callout type="info" >}}
-Please note fees. For every pull from a user a **3%** fee is charged on the price and for every business pull a **5%** fee is charged on the price. For every pull of tokens like USDT, USDC etc a **4%** fee is charged on the price.
+Please visit [this url](https://shakesco.com/charge) to check charges for all transactions. If you are only interested in recurring payments, check under "Card Charges".
 {{< /callout >}}
 
 #### Discount period
