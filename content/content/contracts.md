@@ -47,6 +47,6 @@ title: Contract Addresses
 
 | Contract Name        | Address           | Purpose  |
 | ------------- |:-------------:| -----:|
-| ShakescoBusinessTokenFactory|0x28413C4618b7fD2d784BEBca21F6995085cacF53|Business launch token factory |
-| ShakescoBusinessNFTFactory  |0xFddd49B619043fd2bB4C249f17DD28312A574713|Business launch NFT factory |
+| ShakescoBusinessTokenFactory|0xAA5f01021CEe18A5dB1485ffC9D2CB3b823d0Dd7|Business launch token factory |
+| ShakescoBusinessNFTFactory  |0x3Bac6F15629cBB10A5Deaae64a896fb0DFA7CD5C|Business launch NFT factory |
 | ShakescoUsername |0x3D134E5e7B8239AB76478B359092a988e69eE55e|Shakesco Naming Service |
