@@ -98,7 +98,9 @@ If you want to see the fee charged for every transaction, go [__here__](https://
 
 #### Request user
 
-Send request to user. Ask user for Shakesco card/ Business card address.
+To check if you can request a certain user [check here](#can-request). To check which payer you are requesting, [check here](#check-payer)
+
+Send request to user. Ask user for Shakesco/Business card address.
 
 ```javascript {filename=index.js}
   const address = /* Initialize your automation address. Can be found in your dashboard https://users.shakesco.com */
@@ -117,6 +119,36 @@ Send request to user. Ask user for Shakesco card/ Business card address.
 
   console.log(requestUser);//Requested user successfully
   console.log(requestBusiness);//Requested business successfully
+```
+
+#### Can Request
+
+Before requesting, check if the payer can be requested. If not, they should accept requests from there Shakesco app.
+
+```javascript
+  const your_smart_wallet_address = ""; // get on your dashboard https://users.shakesco.com/login
+
+  const shakescocontract = new Automation(your_smart_wallet_address, process.env.SHAKESCOAPIKEY, "1");
+
+  const delegateAddress = /*Ask user/business for their Shakesco card/delegate/business card ONLY.*/
+
+  const canre = await shakescocontract.canRequest(delegateAddress);
+  console.log(canre); // {"id":1,"status":"true"}
+```
+
+#### Check Payer
+
+Before requesting, check if the payer is a business or user. Businesses and customers have different [charges](https://shakesco.com/charges) per every successful transaction.
+
+```javascript
+  const your_smart_wallet_address = ""; // get on your dashboard https://users.shakesco.com/login
+
+  const shakescocontract = new Automation(your_smart_wallet_address, process.env.SHAKESCOAPIKEY, "1");
+
+  const delegateAddress = /*Ask user/business for their Shakesco card/delegate/business card ONLY.*/
+
+  const canre = await shakescocontract.isBusiness(delegateAddress);
+  console.log(canre); // {"id":1,"is_business":false}
 ```
 
 {{< callout type="info" >}}

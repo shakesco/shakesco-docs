@@ -37,24 +37,25 @@ The user will always return has_paid as true, until you request again. If you re
 
 #### Requesting token
 
-We have added support for you to request tokens from users. For now your Polygon auto-payment account supports WETH, USDT, DAI and USDC. On Ethereum: USDT, DAI and USDC.
+We have added support for you to request tokens from users. For now your Polygon auto-payment account supports WETH, WBTC, USDT, DAI and USDC. On Ethereum: USDT, DAI and USDC.
 
 {{< callout type="warning" >}}
 When entering token address, please make sure it is a checksummed address. Otherwise your autopayment account will not work properly. Especially with STABLECOINS! If you don't want to accept tokens, just enter an empty string in its place.
 {{< /callout >}}
 
-Thankfully, we've done the work for you with Polygon:
+Thankfully, we've taken care of the work for you. Starting with Polygon:
 
 1. **WETH** - "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"
-2. **USDT** - "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
-3. **USDC** - "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
-4. **DAI** - "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
+2. **WBTC** - "0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6"
+3. **USDT** - "0xc2132D05D31c914a87C6611C10748AEb04B58e8F"
+4. **USDC** - "0x3c499c542cEF5E3811e1192ce70d8cC03d5c3359"
+5. **DAI** - "0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063"
 
    For Ethereum:
 
-5. **USDC** - "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-6. **USDT** - "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-7. **DAI** - "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+6. **USDC** - "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+7. **USDT** - "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+8. **DAI** - "0x6B175474E89094C44Da98b954EedeAC495271d0F"
 
 #### Split
 

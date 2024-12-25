@@ -177,7 +177,9 @@ Check if the request is sent to your Shakesco app. If you request business check
 This is a POST request
 {{< /callout >}}
 
-To request a Customer or a Business, send a request to this url `https://autopay.shakesco.com/request`. Here is an Example:
+To check if you can request a certain user [check here](#can-request). To check which payer you are requesting, [check here](#check-payer)
+
+To request a customer or a business, send a request to this url `https://autopay.shakesco.com/request`. Here is an Example:
 
 ```javascript {filename="index.js"}
 const config = {
@@ -290,6 +292,103 @@ Amount each splitter will pay. Parse depending on currency code
   id: 1,
   delegate_address: "0xB808ff0E0F4fC24D0cECeED6014f04ecE5bfca36",
   result: "Business has already been requested",
+}
+```
+
+### Check Payer
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+Before requesting, check if the payer is a business or user. Businesses and customers have different [charges](https://shakesco.com/charges) per every successful transaction.
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/is_business",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    delegate_address: user_delegate_address,
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+#### Info
+
+##### user_delegate_address
+
+User's Shakesco/Business card address.
+
+#### Response
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  is_business: "false"
+}
+```
+
+### Can Request
+
+{{< callout type="info" >}}
+This is a POST request
+{{< /callout >}}
+
+Before requesting, check if the payer can be requested. If not, they should accept requests from there Shakesco app.
+
+```javascript {filename="index.js"}
+const config = {
+  method: "POST",
+  url: "https://autopay.shakesco.com/can_request",
+  headers: {
+    accept: "application/json",
+    Authorization: `Bearer ${process.env.YOUR_API_KEY}`,
+  },
+  data: {
+    delegate_address: user_delegate_address,
+    network: Network
+  },
+};
+
+axios
+  .request(config)
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+```
+
+#### Info
+
+##### user_delegate_address
+
+User's Shakesco/Business card address.
+
+##### Network
+
+Depending on where your Business auto account address is deployed. Enter 1 for Ethereum or 137 for Polygon
+
+#### Response
+
+```shell {filename="cmd"}
+{
+  id: 1,
+  status: "true"
 }
 ```
 
@@ -470,50 +569,66 @@ Depending on where your Business auto account address is deployed. Enter 1 for E
 
 #### 400
 
-```shell {filename="cmd"}
-{
-    error: "Bad Request";
-}
-```
-
 Check the currency code that you are parsing. Make sure it in Upper case. Ie: BTC, ETH etc
 
-#### 401
-
 ```shell {filename="cmd"}
 {
-    error: "Unauthorized";
+    error: "Bad Request"
 }
 ```
 
 Check if you have parsed API_KEY. Also parse API_KEY like so `Bearer API_KEY` in Authorization.
 
-#### 402
+#### 401
 
 ```shell {filename="cmd"}
 {
-    error: "Payment Required";
+    error: "Unauthorized"
 }
 ```
+
+#### 402
 
 Make payment because you have reached your request limit.
 
+```shell {filename="cmd"}
+{
+    error: "Payment Required"
+}
+```
+
 #### 403
+
+Check if you have parsed or the user has given you a valid Shakesco/Business Card address
 
 ```shell {filename="cmd"}
 {
-    error: "Forbidden";
+    error: "Forbidden"
 }
 ```
+
+#### 404
 
 Check if you have parsed your API_KEY correctly. Also check if you have parsed the auto_address associated with your API_KEY.
 
-#### 500
-
 ```shell {filename="cmd"}
 {
-    error: "Internal Server Error";
+    error: "Not a valid address"
 }
 ```
 
+```shell {filename="cmd"}
+{
+    error: "User Not Found"
+}
+```
+
+#### 500
+
 Something went wrong. If the issue persists, [contact us immediatelty](https://shakesco.com/contact)
+
+```shell {filename="cmd"}
+{
+    error: "Internal Server Error"
+}
+```

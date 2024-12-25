@@ -1,7 +1,7 @@
 ---
 title: User-operation
 type: docs
-prev: docs/private
+prev: docs/support/api
 sidebar:
   open: true
 ---

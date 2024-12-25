@@ -30,39 +30,54 @@ layout: hextra-home
     imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
+
+   {{< hextra/feature-card
+    title="Donations Checkout 🤑"
+    subtitle="Use our built in donations/tips checkout to get support in seconds"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    image="https://res.cloudinary.com/dtz5vn3yl/image/upload/v1735131351/iaayyugpvdernrgyenff.png"
+    imageClass="hx-top-[40%] hx-left-[24px] hx-w-[180%] sm:hx-w-[110%] dark:hx-opacity-80"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
+  >}}
 {{< /hextra/feature-grid >}}
 
 <div class="hx-mb-10"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    link="docs/autopayments"
+    link="docs/autopayments/checkout"
+    icon="globe-alt"
+    title="Checkout"
+    subtitle=" Seamlessly receive recurring payments with our checkout system."
+  >}}
+  {{< hextra/feature-card
+    link="docs/autopayments/api"
     icon="refresh"
     title="Auto-payments"
-    subtitle="Start receiving recurring payments from your customers and/or business partners. The FIRST  auto-payment system that is self-custody!💳"
+    subtitle="Integrate automated payments into your workflow—secure, decentralized, and effortless!💳"
+  >}}
+    {{< hextra/feature-card
+    link="docs/silent"
+    icon="lock-closed"
+    title="Bitcoin Silent Payments"
+    subtitle="Send and receive silent payments securely within the app or via our SDK.🥷"
   >}}
   {{< hextra/feature-card
     link="docs/private"
     icon="lock-closed"
     title="Privacy"
-    subtitle="We're make Bitcoin and Ethereum cypherpunk again. Donate or receive stealth payments through the app or build with our SDK and start receiving private transactions🥷"
+    subtitle="Enable shielded, private transfers effortlessly—cypherpunk made simple! 🥷"
   >}}
   {{< hextra/feature-card
-    link="https://smart.shakesco.com"
-    icon="finger-print"
-    title="Smart wallet"
-    subtitle="Create smart wallets for your dAPP users in seconds. No seed phrase required. Powered by MPC security! 🤯"
-  >}}
-    {{< hextra/feature-card
-    link="docs/userop"
-    icon="clipboard-list"
-    title="Userop"
-    subtitle="Building a smart wallet and want to estimate the amount of gas your user will pay? No problem we got you covered😉"
+    link="docs/support"
+    icon="heart"
+    title="Donations"
+    subtitle="Receive contributions easily through our checkout or API—secure and seamless! 💝"
   >}}
   {{< hextra/feature-card
     link=https://get.shakesco.com
     icon="device-mobile"
     title="Download"
-    subtitle="To perform recurring payments you need to deploy/open an auto account. It is labelled 'Business auto' when you open your business account. 📱"
+    subtitle="To perform recurring payments you need to deploy/open an auto account. It is labelled 'Business auto' when you create your business wallet. 📱"
   >}}
 {{< /hextra/feature-grid >}}

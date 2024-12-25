@@ -29,9 +29,9 @@ Lowercase represent private keys. Upper case represent public key. `G` is a gene
 
 Alice published her public key A for Bob to send her some Bitcoin privately. Bob takes her public key and creates a shared secret with it to derive a destination address from which Alice can spend funds from. In math terms **`A + hash(b · A) · G`** = **`P`**
 
-`b` in this case is bob's (Unspent Transaction Output)UTXO private key. Since `b · A == a · B` [**(Elliptic Curve Diffie-Hellman)**](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman "ECDH"), Alice can prove the Bitcoin sent is hers by taking every output public key from transactions and computing: **`A + hash(a · B) · G`** = **`P`**
+`b` in this case is bob's Unspent Transaction Output(UTXO) private key. Since `b · A == a · B` [**(Elliptic Curve Diffie-Hellman)**](https://en.wikipedia.org/wiki/Elliptic-curve_Diffie%E2%80%93Hellman "ECDH"), Alice can prove the Bitcoin sent is hers by taking every output public key from transactions and computing: **`A + hash(a · B) · G`** = **`P`**
 
-If Bob continues to spend from the same UTXO with the public key B, she will end up deriving the same output P. To avoid this Bob can include the input hash, hash of the transaction id and output index, in his computation:
+If Bob continues to spend from the same UTXO with the public key B, he will end up deriving the same output P. To avoid this Bob can include the input hash, hash of the transaction id and output index, in his computation:
 
 **`A + hash(input_hash · b · A) · G`** = **`P`**
 

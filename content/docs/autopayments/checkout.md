@@ -113,6 +113,8 @@ To get started, first you need to send an API call to create a session for a spe
 This is a POST request
 {{< /callout >}}
 
+Before requesting, check if the payer is a business or user. Businesses and customers have different [charges](https://shakesco.com/charges) per every successful transaction. To check which payer you are requesting, [check here](../api#check-payer)
+
 To get the URL, send a request to this url `https://autopay.shakesco.com/start_session`. Here is an Example:
 
 ```javascript {filename="index.js"}
@@ -205,10 +207,11 @@ Here are the tokens and coins your auto account supports:
 ###### Polygon
 
 1. **Polygon**
-2. **WETH**
-3. **USDT**
-4. **USDC**
-5. **DAI**
+2. **WBTC**
+3. **WETH**
+4. **USDT**
+5. **USDC**
+6. **DAI**
 
 ###### Ethereum
 
