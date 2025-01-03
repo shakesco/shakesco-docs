@@ -17,7 +17,7 @@ First, open your auto-account. We suggest Polygon. Ethereum is too expensive!
 You will notice your auto-payment wallet already has some LINK. This is because when you open an account(deploy your contract), your smart wallet performs a batch transaction to allow your auto-payment wallet to go live!
 
 <img
-src="/images/1728.png"  
+src="/images/dash.png"  
 alt="Dashboard"
 height="200">
 

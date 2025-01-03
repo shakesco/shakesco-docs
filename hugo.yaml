@@ -70,7 +70,7 @@ params:
     displayTitle: true
     displayLogo: true
     logo:
-      path: https://res.cloudinary.com/dtz5vn3yl/image/upload/v1710622699/sxvg6waqt5d3flelfees.png
+      path: /images/shakesco.png
 
   footer:
     displayCopyright: false
