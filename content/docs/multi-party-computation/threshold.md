@@ -2,7 +2,7 @@
 title: Threshold Cryprography
 type: docs
 prev: docs/Multi-Party Computation/mpc_vs_smart
-next: docs/autopayments/
+next: docs/pay-team/
 ---
 
 ## Threshold Secret Sharing(TSS)

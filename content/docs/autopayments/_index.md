@@ -1,7 +1,7 @@
 ---
 title: Recurring payments
 type: docs
-prev: docs/mpc
+prev: docs/pay-team/payroll
 next: docs/autopayments/integration
 sidebar:
   open: true
